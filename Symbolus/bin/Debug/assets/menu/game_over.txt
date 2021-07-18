@@ -1,0 +1,24 @@
+~fffffffffffffffffffffffffffffffffffffff~
+~fff                                 fff~
+~fff ############################### fff~
+~fff #          GAME OVER          # fff~
+~fff ############################### fff~
+~fff #                             # fff~
+~fff #                             # fff~
+~fff #      11111111111111111      # fff~
+~fff #   11111    Újra     11111   # fff~
+~fff #      11111111111111111      # fff~
+~fff #                             # fff~
+~fff #                             # fff~
+~fff #      22222222222222222      # fff~
+~fff #   22222   Kiépés    22222   # fff~
+~fff #      22222222222222222      # fff~
+~fff #                             # fff~
+~fff #                             # fff~
+~fff ############################### fff~
+~fff                                 fff~
+~fffffffffffffffffffffffffffffffffffffff~
+~fffffffffffffffffffffffffffffffffffffff~
+=
+1:retry
+2:quit

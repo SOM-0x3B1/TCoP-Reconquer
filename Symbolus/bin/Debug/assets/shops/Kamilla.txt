@@ -1,0 +1,4 @@
+potion
+Fű;Egy kis dudva. Zöld, tehát egészséges. +10% HP;heal1;1;20
+Gyógyfű;Minőségi dudva. +20% HP;heal2;1;45
+Hagyma és Pióca;Így kell kiűzni az ördögöt az ember testéből. +50% HP;heal3;1;120

@@ -1,0 +1,22 @@
+##############################
+#              V             #
+#                            #
+#             fff            #
+#            fffff           #
+#            SSSSS           #
+#            SSSSS           #
+#             SSS            #
+#          pppSSSppp         #
+#        ppppPPPPPpppp       #
+#       pppppPPPPPppppp      #
+#      ppp ppPPPPPpp pppff   #
+#     ppp  ppPPPPPpp  ppp    #
+#     pp   pppPPPppp  ffp    #
+#           ppfffpp  ff      #
+#           fffffff ff       #
+#           fff fff          #
+#           fff fff          #
+##############################
+#         H                  #
+##############################
+=

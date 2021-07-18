@@ -1,0 +1,23 @@
+##############################
+#                            #
+#                            #
+#                            #
+#                            #
+#                            #
+#              ff            #
+#             fppf           #
+#            fpFFpf          #
+#           fpFppFpf         #
+#          fpFFppFFpf        #
+#         fpFFFppFFFpf       #
+#        fpFFFFFFFFFFpf      #
+#       fpFFFFFppFFFFFpf     #
+#      fppppppppppppppppf    #
+#     ffffffffffffffffffff   #
+#             ffff           #
+#             ffff           #
+##############################
+=
+forest
+0;Egy random tábla a földút közepén...;1
+1;Tábla: "Az út nem kutya WC!";-1

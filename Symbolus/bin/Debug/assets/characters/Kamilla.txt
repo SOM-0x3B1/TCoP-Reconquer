@@ -1,0 +1,23 @@
+##############################
+#                            #
+#             sss            #
+#            sssss           #
+#           ssSSSss          #
+#           sSSSSSs          #
+#           ssSSSss          #
+#          GssSSSssG         #
+#         GGGssFssGGG        #
+#    ff   GGGFFFFFGGG        #
+#   f  f GGGGFFFFFGGGG       #
+#   ff   GGGGFFFFFGGGG       #
+#     ffGGGGGFFFFFGGGGG      #
+#       GGGGGFFFFFGGGGG      #
+#        GGGGFFFFFGGGG       #
+#          FffFFFFFF         #
+#         FFFFffFFFFF        #
+#         FFFFFFffFFF        #
+##############################
+=
+forest
+0;Kamilla: "Üdv, utazó. Kamilla néni vagyok.";1
+1;Kamilla: "Nálam tudsz gyógyító főzeteket venni."%Bolt/Vissza;-2,-1;

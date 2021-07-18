@@ -1,0 +1,6 @@
+Gyors támadás;fast_attack;Ha az egyik ütés nem talál, a többi még sebezhet. Foglalatonként az alapsebzés 100%-a.
+Erős támadás;heavy_attack;Egy nagy (2 foglalatos), kockázatos ütés. Foglalatonként az alapsebzés 115%-a.
+Pajzs;shield;1,4-szeresére növeli a védelmet a kör idejéig (egyszer használható).
+Dodge;dodge;55%-kal növeli a kitérés esélyét (egyszer használható).
+Gyógyítás;heal;+10% HP.
+Skip;skip;Egy kis pihenés. Visszaállít némi staminát.

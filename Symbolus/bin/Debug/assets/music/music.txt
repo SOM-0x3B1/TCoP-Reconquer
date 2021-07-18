@@ -1,0 +1,10 @@
+confusion
+final_boss
+default
+fight
+forest
+game_over
+hostile
+main_menu
+shop
+win

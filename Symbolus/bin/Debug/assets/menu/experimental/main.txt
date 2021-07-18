@@ -1,0 +1,33 @@
+  fffffffffffffffffffffffffffffffff  ~fffffffffffffffffffffffffffffffffffffff~    fffffffffffffffffffffffffffffffff
+    f       f   f f     f f       f  ~fff                                 fff~      f f     f               f f f f
+f f fffff fff fffffff fff f fffffff  ~fff ############################### fff~  fff f f f f fffff f fffff f f f f f
+f f f f fffffff f f f fff fffff f f  ~fff #                             # fff~  f       f f       f f f   f   f   f
+f f   f f           f     f f   f f  ~fff #      Pusztaszentistván      # fff~  fffffffffff f f f fff fff f f f f f
+fff f f f fffff fff fffffff fff f f  ~fff #           Krónikái          # fff~  f   f f     f f f f   f   f f f f f
+f   f f   f f     f     f   f f f f  ~fff # DEMO                   DEMO # fff~  f fff fff f fffffffff fff fff fff f
+fffffffffff fffff f f fff fff fff f  ~fff ############################### fff~  f   f f   f f f f f   f     f   f f
+f f     f f   f   f f             f  ~fff #                             # fff~  f f f fff fff f f fff f fff fff f f
+f fff f f f fffff fffffffff fffffff  ~fff #                             # fff~  f f   f   f         f     f   f   f
+f     f f     f   f     f     f   f  ~fff #      11111111111111111      # fff~  fff f f f f f f fffffffffff fff fff
+f fffffffff f f fff fff f fffff f f  ~fff #   11111    Start    11111   # fff~  f   f   f f f f f       f f f     f
+f   f     f f   f   f   f f f   f f  ~fff #      11111111111111111      # fff~  fffffff fffff f f fff f f fffffff f
+f fffffff f fff fffffff fff f fffff  ~fff #                             # fff~  f         f   f   f   f   f f f f f
+f   f       f   f f f   f     f   f  ~fff #                             # fff~  f f fffff f fffff fff fff f f f fff
+f fff f fffff f f f f fffff f fff f  ~fff #      22222222222222222      # fff~  f f f f f f f   f f   f f     f f f
+f f   f f     f   f f f f   f f   f  ~fff #   22222 Beállítások 22222   # fff~  fffff f f f f fffffffff f fffff f f
+f f f f f fffffff f f f fff fffff f  ~fff #      22222222222222222      # fff~  f f             f     f f f   f f f
+f   f f f f     f     f       f f f  ~fff #                             # fff~  f fff f fffffff f f fff f fff f f f
+f f fffffffffff f fff f fff f f f f  ~fff #                             # fff~  f   f f f       f f         f   f f
+f f f   f       f   f f   f f     f  ~fff #      33333333333333333      # fff~  fff fffff fffffffff f fffffffff f f
+fff f fffff fff f fffffffff fff f f  ~fff #   33333   Kilépés   33333   # fff~  f f f f       f   f f       f f   f
+f     f   f   f   f       f   f f f  ~fff #      33333333333333333      # fff~  f f f fffffff f fffffff fff f f fff
+fff fff fff fffffffffffff f f fff f  ~fff #                             # fff~  f                 f f   f     f   f
+f f     f f   f       f     f   f f  ~fff #                             # fff~  f f fffffff f fffff f fff fff fff f
+f f fff f f f f fff fff f fff f fff  ~fff ############################### fff~  f f f     f f     f f   f f     f f
+f   f     f f   f       f f   f   f  ~fff                                 fff~  fff f fffffff f fff f fffff fff f f
+f f f fffff f fffffff f fffffffff f  ~fffffffffffffffffffffffffffffffffffffff~  f   f         f     f   f   f      
+fffffffffffffffffffffffffffffffffff  ~fffffffffffffffffffffffffffffffffffffff~  fffffffffffffffffffffffffffffffff  
+=
+1:start
+2:settings
+3:quit

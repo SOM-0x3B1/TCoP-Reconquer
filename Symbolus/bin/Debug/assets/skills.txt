@@ -1,0 +1,9 @@
+Tejesvödör;0;0;clear;1;7;1p - Eltünteti a játékosra ható effekteket (a jókat is beleértve).
+Csalánozás;25;2;poison;3;5;1p - Ellenfelek megcsapkodása csalánnal. Mérgezés effektet ad 3 körre.
+Pörkölő;30;2;fire;4;15;1p - Két ellenfelet 4 körig felgyújt egy disznópörkölővel.
+Csí áramlás;0;0;heal1;5;10;2p - Érezd, ahogy a csí átjárja, erősíti, és gyógyítja a testedet.
+Csárdás;0;1;confusion;2;8;2p - A mendei csárdás szédítő tempója a legkeményebb ellefelket is összezavarja. Az ellenfél 2 körön keresztül a társait is megtámadhatja.
+Petárda;150;2;stun;1;12;2p - Egy petárdát dobunk két ellefélre. Ez 1 körig kiüti őket.
+Célzóvíz;0;0;accuracy;2;18;3p - Minden ütésed talál, és  2 körig kétszeresen sebez.
+Bemutatás;0;1;rage;3;12;3p - Az ellenfelek felidegesítik magukat, a pontosságuk 75%-kal csökken.
+Molotov;300;3;fire;3;20;3p - Egy Molotov-koktélt dob az ellefelekre. Robbanás, tűz, stb.

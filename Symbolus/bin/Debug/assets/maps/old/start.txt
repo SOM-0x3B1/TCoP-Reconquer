@@ -1,0 +1,16 @@
+##bbbbbbb##
+#~bwwwwwb~#
+#~bwwwwwb~#
+#~bbbwbbb~#
+#~   w   ~#
+#~ B w B ~#
+#~   w   ~#
+#~ B w B ~#
+#~   w   ~#
+#~ B w B ~#
+#~   w   ~#
+#####w#####
+=
+p:5,2
+d:0
+g:5,11;town1

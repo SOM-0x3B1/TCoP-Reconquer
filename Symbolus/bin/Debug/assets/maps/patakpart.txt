@@ -1,0 +1,26 @@
+BBBBBBBBBBBBB BBBBBBBBBBB   BB
+BB   BBBBBB  BBBBB BBBBB    BB
+  BBBB    BBBB   BB B        B
+                       BB   BB
+        BBB       BB        BB
+                             B
+                            BB
+BBB   BBBBBB   BBBB          B
+B BBBBBBB  BBBBBB B BBBB  ~~~B
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ BBB BBBB  BB BBBBBBBBB   ~~~#
+BB BBBB BBBBBBB  BBB        B#
+                      b      #
+                             #
+ffffffffffffffffffffffffff  ff
+ffffffffffffffffffffffffff  ff
+ffffffffffffffffffffffffff  ff
+ffffffffffffffffffffffffff  ff
+ffffffffffffffffffffffffff  ff
+=
+g:26,18;gardonyi_down;1;26,0
+g:27,18;gardonyi_down;1;27,0
+m:forest
+=
+Egy patak keresztezi utadat. Régen egy híd/vezetett át rajta, de a támadás során leomlott.
+Javíthatónak tűnik, de eszközök hiányában/egyedül nem fogsz boldogulni.

@@ -1,0 +1,29 @@
+ffffffffffffffffffffffffff  ff
+fffffffffffffffffffffffff   ff
+ffffffffffffffffffffffffff  ff
+                            ff
+--------------------------  ff
+    BBB            B BBB '  ff
+#######################B '  ff
+     #                #  '  ff
+     #    bbbbbbbb    #B '  ff
+     #    bbbbbbbb    #  '  ff
+     #    bbbbbbbb    #  '  ff
+     #    bbbbbbbb    #  '  ff
+     #                #  '  ff
+     #  BB  #######   #B '  ff
+bb   #      #     #   #  '  ff
+bb   #  BB  #     #   #  '  ff
+bb   #      # b   #   #B '  ff
+     #      # b   #   #  '  ff
+######      #     #   #  '  ff
+=
+g:0,3;main_start;1;28,3
+g:0,4;main_start;1;28,4
+g:0,5;main_start;1;28,5
+g:26,0;patakpart;1;26,18
+g:27,0;patakpart;1;27,18
+n:kutya_wc,25,1,0
+m:default
+=
+Az út ketté ágazik./Jobbra a falu belseje, balra a völgy. 
