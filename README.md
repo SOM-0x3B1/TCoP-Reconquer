@@ -2,7 +2,7 @@
 
 This is the first part of the The Chronicles of Pusztaszentistván. It is written in C#, and only uses the console as display.<br>
 Full name: **The Chronicles of Pusztaszentistván - Reconquer**<br>
-Hungarian: **Pusztaszentistván Krónikái - Viharfelhők**
+Hungarian: **Pusztaszentistván Krónikái - A Visszafoglalás**
 
 ### Story
 
@@ -20,4 +20,4 @@ The final moments (or hours) of the game depends on the player's actions.
 - [1/4] The Traitor
 - [0/4] ???<br>
 
-*"Ne feledd, ne válj azzá, amit el kell pusztítanod!"*
+*"Ne feledd, ne válj azzá, amit el kell pusztítanod!"
