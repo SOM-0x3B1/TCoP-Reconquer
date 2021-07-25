@@ -20,4 +20,4 @@ The final moments (or hours) of the game depends on the player's actions.
 - [1/4] The Traitor
 - [0/4] ???<br>
 
-*"Ne feledd, ne válj azzá, amit el kell pusztítanod!"
+*"Ne feledd, ne válj azzá, amit el kell pusztítanod!"*
