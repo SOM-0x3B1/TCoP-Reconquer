@@ -11,7 +11,7 @@
 ~fff #                             # fff~
 ~fff #                             # fff~
 ~fff #      22222222222222222      # fff~
-~fff #   22222   Kiépés    22222   # fff~
+~fff #   22222   Kilépés   22222   # fff~
 ~fff #      22222222222222222      # fff~
 ~fff #                             # fff~
 ~fff #                             # fff~
