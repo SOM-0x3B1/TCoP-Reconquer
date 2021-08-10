@@ -75,15 +75,25 @@ namespace Symbolus
 
                     if (i == Program.player.x && j == Program.player.y) //játékos
                     {
-                        Console.ForegroundColor = ConsoleColor.White;
-                        Console.Write((char)3);
+                        if (Tutorial.progress > 0 || Tutorial.textBoxIndex > 1)
+                        {
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Console.Write((char)3);
+                        }
+                        else
+                            Console.Write(c);
                     }
 
                     #region Bűn
                     else if (map.enemies.Any(a => a.x == i && a.y == j)) //ellenség
                     {
-                        Console.ForegroundColor = ConsoleColor.DarkRed;
-                        Console.Write((char)30);
+                        if (Tutorial.progress > 0 || Tutorial.textBoxIndex > 1)
+                        {
+                            Console.ForegroundColor = ConsoleColor.DarkRed;
+                            Console.Write((char)30);
+                        }
+                        else
+                            Console.Write(c);
                     }
                     else if (map.npcs.Any(a => a.x == i && a.y == j && a.person)) //személy npc
                     {
@@ -351,19 +361,34 @@ namespace Symbolus
 
                 if (x == Program.player.x && y == Program.player.y) //játékos
                 {
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write((char)3);
+                    if (Tutorial.progress > 0 || Tutorial.textBoxIndex > 1)
+                    {
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.Write((char)3);
+                    }
+                    else
+                        Console.Write(c);
                 }
                 #region Bűn
                 else if (map.enemies.Any(a => a.x == x && a.y == y)) //ellenség
                 {
-                    Console.ForegroundColor = ConsoleColor.DarkRed;
-                    Console.Write((char)30);
+                    if (Tutorial.progress > 0 || Tutorial.textBoxIndex > 2)
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        Console.Write((char)30);
+                    }
+                    else
+                        Console.Write(c);
                 }
                 else if (map.npcs.Any(a => a.x == x && a.y == y && a.person)) //személy npc
                 {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write((char)31);
+                    if (Tutorial.progress > 0 || Tutorial.textBoxIndex == 3)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.Write((char)31);
+                    }
+                    else
+                        Console.Write(c);
                 }
                 else if (map.npcs.Any(a => a.x == x && a.y == y && !a.person)) //tárgy npc
                 {
