@@ -1,0 +1,3 @@
+language=HU
+music=true
+sound=true
