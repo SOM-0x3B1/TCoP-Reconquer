@@ -1,6 +1,6 @@
 ## TCoP - Reconquer
 
-This is the first part of the The Chronicles of Pusztaszentistván. It is written in C#, and only uses the console as display.<br>
+This is the first part of The Chronicles of Pusztaszentistván. It is written in C#, and only uses the console as display.<br>
 Full name: **The Chronicles of Pusztaszentistván - Reconquer**<br>
 Hungarian: **Pusztaszentistván Krónikái - A Visszafoglalás**
 
