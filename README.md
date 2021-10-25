@@ -23,3 +23,5 @@ The final moments (or hours) of the game depends on the player's actions.
 - [0/4] ???<br>
 
 *"Ne feledd, ne válj azzá, amit el kell pusztítanod!"*
+
+![Title Screen](https://www.onekilobit.eu/media/uploads/Screenshot_2021-06-12_193732.png) ![Title Screen](https://www.onekilobit.eu/media/uploads/Screenshot_2021-06-12_193448.png)
