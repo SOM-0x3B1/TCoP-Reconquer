@@ -7,7 +7,7 @@ Hungarian: **Pusztaszentistván Krónikái - A Visszafoglalás**
 ### Story
 
 The game takes place after hostile peasants called *"suttyós"* attacked and overran Pusztaszentistván.<br>After starting the game the player finds themself in front of the house of my, the creator's house.
-Since the village is full of suttyós, the player must find a way to reconquer the village. In order to succeed, they must obtain stronger equipment, trade with local villagers, and gain experience to learn powerful abilities.
+Since the village is full of suttyós, the player must find a way to reconquer the village. In order to succeed, they must obtain stronger equipment, trade with local villagers, and gain experience to learn powerful abilities.<br>
 *The end of this story is now in your hands. Will you bring salvation or demise upon these damned souls?*
 
 ### Endings
