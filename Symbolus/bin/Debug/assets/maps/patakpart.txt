@@ -18,8 +18,8 @@ ffffffffffffffffffffffffff  ff
 ffffffffffffffffffffffffff  ff
 ffffffffffffffffffffffffff  ff
 =
-g:26,18;gardonyi_down;1;26,0
-g:27,18;gardonyi_down;1;27,0
+g:26,18;main_down;1;26,0
+g:27,18;main_down;1;27,0
 m:forest
 =
 Egy patak keresztezi utadat. Régen egy híd/vezetett át rajta, de a támadás során leomlott.

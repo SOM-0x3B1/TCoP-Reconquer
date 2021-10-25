@@ -372,7 +372,7 @@ namespace Symbolus
                 #region Bűn
                 else if (map.enemies.Any(a => a.x == x && a.y == y)) //ellenség
                 {
-                    if (Tutorial.progress > 0 || Tutorial.textBoxIndex > 2)
+                    if (Tutorial.progress > 0 || Tutorial.textBoxIndex > 1)
                     {
                         Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.Write((char)30);
@@ -382,13 +382,8 @@ namespace Symbolus
                 }
                 else if (map.npcs.Any(a => a.x == x && a.y == y && a.person)) //személy npc
                 {
-                    if (Tutorial.progress > 0 || Tutorial.textBoxIndex == 3)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.Write((char)31);
-                    }
-                    else
-                        Console.Write(c);
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write((char)31);
                 }
                 else if (map.npcs.Any(a => a.x == x && a.y == y && !a.person)) //tárgy npc
                 {

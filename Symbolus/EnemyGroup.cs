@@ -33,7 +33,7 @@ namespace Symbolus
         public bool defeated = false;
         public int XP;
         public int hits = 0;
-        public int summedDamage = 0;        
+        public int summedDamage = 0;
 
         /// <summary>
         /// Konstruktor

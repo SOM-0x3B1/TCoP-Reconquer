@@ -194,9 +194,10 @@ namespace Symbolus
                         Program.player.HP = Program.player.MaxHP;
                         Program.player.S = Program.player.MaxS;
                         Program.combat = true;
-                        foreach (EnemyMember member in Program.cEnemy.members)
+                        //foreach (EnemyMember member in Program.cEnemy.members)
+                        for (int i = 0; i < Program.cEnemy.members.Count; i++)
                         {
-                            member.Reset();
+                            Program.cEnemy.members[i].Reset();
                         }
                         if(Program.musicOn)
                         {
