@@ -89,7 +89,7 @@ namespace Symbolus
         public static SkillTree skillTree = new SkillTree();
         //rajzok
         public static string[] title = new string[22]; //Cím
-        public static string[] stats = new string[5]; //HP és stamina sáv
+        public static string[] stats = new string[7]; //HP és stamina sáv
         public static string[] fightmenu = new string[3]; //HP és stamina sáv
         public static string[] koEnemy = new string[40]; //kiütött ellenfél
         public static string[] actionSlots = new string[3]; //cselekvés-foglalatok
@@ -319,8 +319,9 @@ namespace Symbolus
                 string line = title[i];               
                 
                 Console.WriteLine(line);
-                if (line != "")
-                    Thread.Sleep(495);
+                //if (line != "")
+                    //Thread.Sleep(495);
+
             }
             ConsoleKeyInfo keyinfo = Console.ReadKey(true);
             while (keyinfo.Key != ConsoleKey.Enter && keyinfo.Key != ConsoleKey.Spacebar)

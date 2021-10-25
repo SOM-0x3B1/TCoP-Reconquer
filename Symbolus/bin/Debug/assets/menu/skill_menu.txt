@@ -1,23 +1,23 @@
-~fffffffffffffffffffffffffffffffffffffff~
-~fff                                 fff~
-~fff ############################### fff~
-~fff #          Képességek         # fff~
-~fff ############################### fff~
-~fff #                             # fff~
-~fff #   -                         # fff~
-~fff #                             # fff~
-~fff #   -                         # fff~
-~fff #                             # fff~
-~fff #   -                         # fff~
-~fff #                             # fff~
-~fff #   -                         # fff~
-~fff #                             # fff~
-~fff #   -                         # fff~
-~fff #                             # fff~
-~fff #   -                         # fff~
-~fff #                             # fff~
-~fff #   -                         # fff~
-~fff #                             # fff~
-~fff ############################### fff~
-~fff                                 fff~
-~fffffffffffffffffffffffffffffffffffffff~
+				    ~fffffffffffffffffffffffffffffffffffffff~
+				    ~fff                                 fff~
+				    ~fff ############################### fff~
+				    ~fff #          Képességek         # fff~
+				    ~fff ############################### fff~
+				    ~fff #                             # fff~
+				    ~fff #   -                         # fff~
+				    ~fff #                             # fff~
+				    ~fff #   -                         # fff~
+				    ~fff #                             # fff~
+				    ~fff #   -                         # fff~
+				    ~fff #                             # fff~
+				    ~fff #   -                         # fff~
+				    ~fff #                             # fff~
+				    ~fff #   -                         # fff~
+				    ~fff #                             # fff~
+				    ~fff #   -                         # fff~
+				    ~fff #                             # fff~
+				    ~fff #   -                         # fff~
+				    ~fff #                             # fff~
+				    ~fff ############################### fff~
+				    ~fff                                 fff~
+				    ~fffffffffffffffffffffffffffffffffffffff~

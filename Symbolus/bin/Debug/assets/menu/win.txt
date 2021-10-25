@@ -1,20 +1,20 @@
-~ffffffffffffffffffffffffffffffffffffffffffffffff~
-~fff                                          fff~
-~fff ######################################## fff~
-~fff #                                      # fff~
-~fff #  ----------  Győzelem   -----------  # fff~
-~fff #                                      # fff~
-~fff ######################################## fff~
-~fff #    Zsákmány      #    Teljesítmény   # fff~
-~fff ######################################## fff~
-~fff #                  #                   # fff~
-~fff # XP: ß            #  Sebzés: &        # fff~
-~fff #                  #                   # fff~
-~fff # Pénz: +          #  Sebződés: $      # fff~
-~fff #                  #                   # fff~
-~fff ######################################## fff~
-~fff            """""""""""""""""             fff~
-~fff            "   Folytatás   "             fff~
-~fff            """""""""""""""""             fff~
-~fff                                          fff~
-~ffffffffffffffffffffffffffffffffffffffffffffffff~
+			    ~ffffffffffffffffffffffffffffffffffffffffffffffff~
+			    ~fff                                          fff~
+			    ~fff ######################################## fff~
+			    ~fff #                                      # fff~
+			    ~fff #  ----------  Győzelem   -----------  # fff~
+			    ~fff #                                      # fff~
+			    ~fff ######################################## fff~
+			    ~fff #    Zsákmány      #    Teljesítmény   # fff~
+			    ~fff ######################################## fff~
+			    ~fff #                  #                   # fff~
+			    ~fff # XP: ß            #  Sebzés: &        # fff~
+			    ~fff #                  #                   # fff~
+			    ~fff # Pénz: +          #  Sebződés: $      # fff~
+			    ~fff #                  #                   # fff~
+			    ~fff ######################################## fff~
+			    ~fff            """""""""""""""""             fff~
+			    ~fff            "   Folytatás   "             fff~
+			    ~fff            """""""""""""""""             fff~
+			    ~fff                                          fff~
+			    ~ffffffffffffffffffffffffffffffffffffffffffffffff~
