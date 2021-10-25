@@ -4,7 +4,7 @@ This is the first part of The Chronicles of Pusztaszentistván. The game written
 Full name: **The Chronicles of Pusztaszentistván - Reconquer**<br>
 Hungarian: **Pusztaszentistván Krónikái - A Visszafoglalás**
 
-![Title Screen](https://www.onekilobit.eu/uploads/Screenshot_2021-06-12_193417.png)
+![Title Screen](https://www.onekilobit.eu/media/uploads/Screenshot_2021-06-12_193417.png)
 
 ### Story
 
