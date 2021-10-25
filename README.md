@@ -4,6 +4,8 @@ This is the first part of The Chronicles of Pusztaszentistván. The game written
 Full name: **The Chronicles of Pusztaszentistván - Reconquer**<br>
 Hungarian: **Pusztaszentistván Krónikái - A Visszafoglalás**
 
+![Title Screen](https://www.onekilobit.eu/uploads/Screenshot 2021-06-12 193417.png)
+
 ### Story
 
 The game takes place after hostile peasants called *"suttyós"* attacked and overran Pusztaszentistván.<br>After starting the game the player finds themself in front of the house of my, the creator's house.
