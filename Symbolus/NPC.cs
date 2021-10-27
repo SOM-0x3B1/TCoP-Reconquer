@@ -224,6 +224,10 @@ namespace Symbolus
                         Console.ForegroundColor = ConsoleColor.White;
                     else
                         Console.ForegroundColor = ConsoleColor.DarkGray;
+
+                    for (int l = 0; l < Program.width / 2 - Math.Ceiling((double)dialogs[currentDialog].choises[i].Length / 2) - 6; l++)
+                        Console.Write(' ');
+
                     Console.WriteLine($"[{dialogs[currentDialog].choises[i]}]");
                 }
             }
