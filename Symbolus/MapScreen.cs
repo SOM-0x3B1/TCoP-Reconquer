@@ -281,17 +281,18 @@ namespace Symbolus
             Console.ForegroundColor = ConsoleColor.White;
             if (map.cDialogIndex != map.cutsceneDialogs.Count) 
             {
-                Console.Write(Map.smallCenterSpace);
-                foreach (char ch in map.cutsceneDialogs[map.cDialogIndex])
+                foreach (string line in map.cutsceneDialogs[map.cDialogIndex])
                 {
-                    if (ch == '/')
-                    {                        
-                        Console.Write("\n");
-                        Console.Write(Map.smallCenterSpace);
+                    for (int i = 0; i < Program.width / 2 - line.Length / 2 - 6; i++)
+                    {
+                        Console.Write(' ');
                     }
-                    else
+                    foreach (char ch in line)
+                    {
                         Console.Write(ch);
-                    Thread.Sleep(5);
+                        Thread.Sleep(5);
+                    }
+                    Console.Write("\n");
                 }
                 map.cDialogIndex++;
 

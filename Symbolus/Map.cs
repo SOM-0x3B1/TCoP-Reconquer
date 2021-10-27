@@ -18,7 +18,7 @@ namespace Symbolus
         public List<EnemyGroup> enemies = new List<EnemyGroup>(); //a mapon álló ellenfelek
         public List<NPC> npcs = new List<NPC>(); //a mapon álló NPC-k
 
-        public List<string> cutsceneDialogs = new List<string>(); //a map első betöltésénél megjelenő narráció
+        public List<List<string>> cutsceneDialogs = new List<List<string>>(); //a map első betöltésénél megjelenő narráció
         public int cDialogIndex = 0; //jelenlegi dialógus indexe
 
         public static string centerSpace = "                                        ";
@@ -77,13 +77,16 @@ namespace Symbolus
                     }
                     line = r.ReadLine();
                 }
-                line = r.ReadLine();
+                int k = 0;
                 while (!r.EndOfStream) //narráció betöltése
                 {
-                    cutsceneDialogs.Add(line);
                     line = r.ReadLine();
+                    string[] s = line.Split('/');
+                    cutsceneDialogs.Add(new List<string>());
+                    foreach (var item in s)
+                        cutsceneDialogs[k].Add(item);
+                    k++;                    
                 }
-                cutsceneDialogs.Add(line);
             }
         }
 
