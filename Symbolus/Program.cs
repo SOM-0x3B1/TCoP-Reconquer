@@ -79,6 +79,7 @@ namespace Symbolus
         [DllImport("winmm.dll")]
         static extern int mciSendString(string command, StringBuilder buffer, int bufferSize, IntPtr hwndCallback);
         public static Random rnd = new Random();
+        public static int width = 120;
         //alap
         public static Player player = new Player(10, 2); //mobilis objektum (pozícióval rendelkezik)
         public static MapScreen mapScreen = new MapScreen(); //kezelőfelület (térkép + mobilis objektumok)
@@ -307,7 +308,7 @@ namespace Symbolus
 
             Thread.Sleep(1000); //Az előkészületek után valamiért időt kell hagyni a programnak.
 
-            Console.SetWindowSize(120, 30);
+            Console.SetWindowSize(width, 30);
 
             //Menüzene indul
             if (musicOn)
