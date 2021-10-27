@@ -279,12 +279,16 @@ namespace Symbolus
             Console.WriteLine();
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.White;
-            if (map.cDialogIndex != map.cutsceneDialogs.Count) //HP és stamina sáv
+            if (map.cDialogIndex != map.cutsceneDialogs.Count) 
             {
+                Console.Write(Map.smallCenterSpace);
                 foreach (char ch in map.cutsceneDialogs[map.cDialogIndex])
                 {
                     if (ch == '/')
+                    {                        
                         Console.Write("\n");
+                        Console.Write(Map.smallCenterSpace);
+                    }
                     else
                         Console.Write(ch);
                     Thread.Sleep(5);
@@ -310,7 +314,7 @@ namespace Symbolus
         /// Néhány pixel frissítése a consol-ban.
         /// </summary>
         /// <param name="positions">Frissítendő pozíciók</param>
-        public void RefreshPixels(List<Position> positions)
+        public void RefreshPixels(List<Position> positions) //fixed with 3916ea8b
         {
             int lastx = Console.CursorLeft;
             int lasty = Console.CursorTop;
@@ -319,7 +323,7 @@ namespace Symbolus
                 int x = pos.x;
                 int y = pos.y;
                 char c = map.matrix[y][x];
-                Console.SetCursorPosition(x, y);
+                Console.SetCursorPosition(x+Map.centerSpaceLength, y);
                 switch (c)
                 {
                     case '#':
@@ -403,77 +407,78 @@ namespace Symbolus
                 Console.BackgroundColor = ConsoleColor.Black;
             }
 
-
-            for (int j = 1; j < 4; j += 2)
+            char c2;
+            for (int j = 0; j < Program.stats.Length; j ++)
             {
-                Console.SetCursorPosition(0, 21 + j);
-
-                foreach (char c2 in Program.stats[j])
+                for (int i = 0; i < Program.stats[j].Length; i++)
                 {
+                    Console.SetCursorPosition(i, j);
+                    c2 = Program.stats[j][i];
+
                     if (c2 == '1')
                     {
-                        int i = 0;
+                        int k = 0;
                         string hp = Program.player.HP.ToString();
                         int hplen = hp.ToString().Length;
-                        for (i = 0; i < (8 - hplen); i++)
+                        for (k = 0; k < (8 - hplen); k++)
                         {
                             hp += ' ';
                         }
                         double scale = (double)Program.player.HP / Program.player.MaxHP;
-                        i = 0;
-                        for (; i < Math.Floor(scale * 8); i++)
+                        k = 0;
+                        for (; k < Math.Floor(scale * 8); k++)
                         {
                             Console.BackgroundColor = ConsoleColor.DarkRed;
-                            Console.Write(hp[i]);
+                            Console.Write(hp[k]);
                         }
                         Console.BackgroundColor = ConsoleColor.Red;
-                        for (; i < hp.Length; i++)
+                        for (; k < hp.Length; k++)
                         {
-                            Console.Write(hp[i]);
+                            Console.Write(hp[k]);
                         }
+                        i += hp.Length - 1;
                         Console.BackgroundColor = ConsoleColor.Black;
                     }
                     else if (c2 == '2')
                     {
-                        int i = 0;
+                        int k = 0;
                         string s = Program.player.S.ToString();
                         int slen = s.ToString().Length;
-                        for (i = 0; i < (8 - slen); i++)
+                        for (k = 0; k < (8 - slen); k++)
                         {
                             s += ' ';
                         }
                         double scale = (double)Program.player.S / Program.player.MaxS;
-                        i = 0;
-                        for (; i < Math.Floor(scale * 8); i++)
+                        k = 0;
+                        for (; k < Math.Floor(scale * 8); k++)
                         {
                             Console.BackgroundColor = ConsoleColor.DarkBlue;
-                            Console.Write(s[i]);
+                            Console.Write(s[k]);
                         }
                         Console.BackgroundColor = ConsoleColor.Blue;
-                        for (; i < s.Length; i++)
+                        for (; k < s.Length; k++)
                         {
-                            Console.Write(s[i]);
+                            Console.Write(s[k]);
                         }
+                        i += s.Length - 1;
                         Console.BackgroundColor = ConsoleColor.Black;
                     }
                     else if (c2 == '3')
                     {
-                        int i = 0;
+                        int k = 0;
                         string s;
                         if (Program.player.sprint)
-                            s = "   Futás";
+                            s = " Futás";
                         else
-                            s = "   Séta";
+                            s = " Séta";
 
                         int slen = s.ToString().Length;
-                        for (i = 0; i < (12 - slen); i++)
+                        for (k = 0; k < s.Length; k++)
                         {
-                            s += ' ';
+                            Console.Write(s[k]);
                         }
-                        for (i = 0; i < s.Length; i++)
-                        {
-                            Console.Write(s[i]);
-                        }
+
+                        i += s.Length - 1;
                         Console.BackgroundColor = ConsoleColor.Black;
                     }
                     else

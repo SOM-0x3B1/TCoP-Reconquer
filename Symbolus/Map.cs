@@ -21,7 +21,10 @@ namespace Symbolus
         public List<string> cutsceneDialogs = new List<string>(); //a map első betöltésénél megjelenő narráció
         public int cDialogIndex = 0; //jelenlegi dialógus indexe
 
-        public static string centerSpace = "                                     ";
+        public static string centerSpace = "                                        ";
+        public static int centerSpaceLength = centerSpace.Length;
+        public static string smallCenterSpace = "                                    ";
+        public static int smallCenterSpaceLength = centerSpace.Length;
 
 
         public Map(string name)
