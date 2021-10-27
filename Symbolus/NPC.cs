@@ -90,6 +90,7 @@ namespace Symbolus
             char c;
             for (int j = 0; j <= background.maxY; j++)
             {
+                Console.Write(Map.centerSpace);
                 for (int i = 0; i < background.matrix[0].Length; i++)
                 {
                     if(this.matrix[j][i] == ' ')
@@ -167,10 +168,8 @@ namespace Symbolus
             if (Program.NPCRefresh)
             {
                 //skipChecker.Start();
-                foreach (char c2 in dialogs[currentDialog].message)
+                /*foreach (char c2 in dialogs[currentDialog].message)
                 {
-                    /*if(steps % 14 == 0)
-                        Program.PlaySound(voice);*/
 
                     if (c2 == '/')
                         Console.Write("\n");
@@ -179,17 +178,39 @@ namespace Symbolus
 
                     Thread.Sleep(delay);
                     //steps++;
-                }
+                }*/
                 //steps = 0;
+                foreach (string line in dialogs[currentDialog].message)
+                {
+                    for (int i = 0; i < Program.width / 2 - line.Length / 2 - 6; i++)
+                        Console.Write(' ');
+
+                    foreach (char ch in line)
+                    {
+                        Console.Write(ch);
+                        Thread.Sleep(5);
+                    }
+                    Console.Write("\n");
+                }
             }
             else
             {
-                foreach (char c2 in dialogs[currentDialog].message)
+                /*foreach (char c2 in dialogs[currentDialog].message)
                 {
                     if (c2 == '/')
                         Console.Write("\n");
                     else
                         Console.Write(c2);
+                }*/
+                foreach (string line in dialogs[currentDialog].message)
+                {
+                    for (int i = 0; i < Program.width / 2 - line.Length / 2 - 6; i++)
+                        Console.Write(' ');
+
+                    foreach (char ch in line)
+                        Console.Write(ch);
+
+                    Console.Write("\n");
                 }
             }
             Console.WriteLine();
@@ -207,7 +228,11 @@ namespace Symbolus
                 }
             }
             else
+            {
+                for (int i = 0; i < Program.width / 2 - 6; i++)
+                    Console.Write(' ');
                 Console.WriteLine("...");
+            }
 
 
             /*skipChecker.Join();
@@ -241,7 +266,7 @@ namespace Symbolus
                     cursorPos--;
                     Program.PlaySound("menumove");
                 }
-                else if (keyinfo.Key == ConsoleKey.S && cursorPos < dialogs[currentDialog].choises.Count-1)
+                else if (keyinfo.Key == ConsoleKey.S && cursorPos < dialogs[currentDialog].choises.Count - 1)
                 {
                     cursorPos++;
                     Program.PlaySound("menumove");
@@ -367,7 +392,7 @@ namespace Symbolus
     {
         public bool choise; //választásos-e
         public int index;
-        public string message; //szöveg
+        public string[] message; //szöveg
         public List<string> choises = new List<string>(); //választások
         public List<int> destinations = new List<int>(); //következő dialógusok indexei
 
@@ -382,7 +407,7 @@ namespace Symbolus
             if (msg.Length > 1)
             {
                 choise = true;
-                message = msg[0];
+                message = msg[0].Split('/');
                 foreach(string choise in msg[1].Split('/'))
                 {
                     choises.Add(choise);
@@ -395,7 +420,7 @@ namespace Symbolus
             else
             {
                 choise = false;
-                message = input[1];
+                message = input[1].Split('/');
                 destinations.Add(int.Parse(input[2]));
             }
         }

@@ -284,9 +284,8 @@ namespace Symbolus
                 foreach (string line in map.cutsceneDialogs[map.cDialogIndex])
                 {
                     for (int i = 0; i < Program.width / 2 - line.Length / 2 - 6; i++)
-                    {
                         Console.Write(' ');
-                    }
+
                     foreach (char ch in line)
                     {
                         Console.Write(ch);
