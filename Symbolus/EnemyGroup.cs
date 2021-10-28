@@ -35,6 +35,10 @@ namespace Symbolus
         public int hits = 0;
         public int summedDamage = 0;
 
+        public static string centerSpace = "                              ";
+        public static string smallCenterSpace = "                             ";
+        private int centerSpaceLength;
+
         /// <summary>
         /// Konstruktor
         /// </summary>
@@ -81,6 +85,8 @@ namespace Symbolus
                     moving = false;
                 }
             }
+
+            centerSpaceLength = Program.width / 2 - (31 * members.Count) / 2 + (6 * (members.Count - 1)) - 4;
         }
 
 
@@ -304,8 +310,11 @@ namespace Symbolus
             char c;
             for (int j = 0; j <= members[0].maxY; j++)
             {
-                if(members.Count==1)
-                    Console.Write("\t");
+                /*if(members.Count==1)
+                    Console.Write("\t");*/
+
+                for (int i = 0; i < centerSpaceLength; i++)
+                    Console.Write(' ');
                     
                 for (int k = 0; k < members.Count; k++)
                 {
@@ -513,7 +522,9 @@ namespace Symbolus
 
             for (int m = 0; m < 3; m++) //HP és stamina sáv; cselekvés-foglalatok
             {
-                string line = Program.stats[m];
+                Console.Write(centerSpace);
+
+                string line = Program.combatStats[m];
                 Console.Write("  ");
                 foreach (char c2 in line)
                 {
@@ -660,6 +671,7 @@ namespace Symbolus
             {
                 foreach (string s in Program.fightmenu)
                 {
+                    Console.Write(smallCenterSpace);
                     foreach (char c2 in s)
                     {
                         if (c2 <= '9' && c2 >= '1')

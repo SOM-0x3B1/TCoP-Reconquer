@@ -91,6 +91,7 @@ namespace Symbolus
         //rajzok
         public static string[] title = new string[22]; //Cím
         public static string[] stats = new string[7]; //HP és stamina sáv
+        public static string[] combatStats = new string[3]; //harci HP és stamina sáv
         public static string[] fightmenu = new string[3]; //HP és stamina sáv
         public static string[] koEnemy = new string[40]; //kiütött ellenfél
         public static string[] actionSlots = new string[3]; //cselekvés-foglalatok
@@ -209,6 +210,15 @@ namespace Symbolus
                 while (!r.EndOfStream)
                 {
                     stats[i] = r.ReadLine();
+                    i++;
+                }
+            }
+            using (StreamReader r = new StreamReader(@"assets\screen_modules\combat_stats.txt", Encoding.UTF8))
+            {
+                int i = 0;
+                while (!r.EndOfStream)
+                {
+                    combatStats[i] = r.ReadLine();
                     i++;
                 }
             }
@@ -382,7 +392,7 @@ namespace Symbolus
     public class Tutorial
     {
         public static List<List<TextBox>> listOfTextBoxes = new List<List<TextBox>>();
-        public static int progress = 0;
+        public static int progress = 1;
         public static int textBoxIndex = 0;
         public static bool completed = false;
         public static bool disabled = false;
