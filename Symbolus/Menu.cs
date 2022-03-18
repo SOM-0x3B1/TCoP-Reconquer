@@ -103,6 +103,24 @@ namespace Symbolus
             Controls();
         }
 
+        private void Back()
+        {
+            this.cursorPos = 1;
+            if (this.backFromPause)
+            {
+                this.backFromPause = false;
+                if (Program.combat)
+                    Program.nextDisplayed = Program.Screen.Combat;
+                else
+                    Program.nextDisplayed = Program.Screen.Map;
+            }
+            else
+            {
+                this.menuPage = new MenuPage("main");
+                Program.nextDisplayed = Program.Screen.Menu;
+            }
+        }
+
         /// <summary>
         /// Utasítás várása, fogadása és végrehajtása
         /// </summary>
@@ -127,6 +145,11 @@ namespace Symbolus
                     this.cursorPos++;
                     Program.PlaySound("menumove");
                 }
+                else if (keyinfo.Key == ConsoleKey.Escape)
+                {
+                    Program.PlaySound("select");
+                    Back();
+                }
             }
             else
             {                
@@ -150,20 +173,7 @@ namespace Symbolus
                         Environment.Exit(0);
                         break;
                     case "back":
-                        this.cursorPos = 1;
-                        if (this.backFromPause)
-                        {
-                            this.backFromPause = false;
-                            if (Program.combat)
-                                Program.nextDisplayed = Program.Screen.Combat;
-                            else
-                                Program.nextDisplayed = Program.Screen.Map;
-                        }
-                        else
-                        {
-                            this.menuPage = new MenuPage("main");
-                            Program.nextDisplayed = Program.Screen.Menu;
-                        }
+                        Back();
                         break;
                     case "settings":
                         this.cursorPos = 1;
@@ -189,6 +199,7 @@ namespace Symbolus
                         break;
                     case "sound":
                         Program.soundOn = !Program.soundOn;
+                        Program.PlaySound("select", true);
                         break;
                     case "retry":
                         Program.player.HP = Program.player.MaxHP;

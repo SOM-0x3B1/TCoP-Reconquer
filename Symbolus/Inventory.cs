@@ -125,22 +125,22 @@ namespace Symbolus
                         c = ' ';
                         if (page == 1 && (index < weapons.Count()))
                         {
-                            WriteListItem(weapons[index], 18, false);
+                            WriteListItem(weapons[index], 20, false);
                         }
                         else if (page == 2 && (firstListed + listed < armors.Count()))
                         {
-                            WriteListItem(armors[index], 18, false);
+                            WriteListItem(armors[index], 20, false);
                         }
                         else if (page == 3 && (firstListed + listed < potions.Count()))
                         {
-                            WriteListItem(potions.ElementAt(index).Value, 18);
+                            WriteListItem(potions.ElementAt(index).Value, 20);
                         }
                         else
                         {
-                            Console.Write("                  ");
+                            Console.Write("                    ");
                         }
 
-                        i += 21;
+                        i += 23;
                         listed++;
                     }
                     else if (c == 'W')

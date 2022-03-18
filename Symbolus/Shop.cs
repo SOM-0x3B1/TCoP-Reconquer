@@ -98,13 +98,9 @@ namespace Symbolus
                             Console.BackgroundColor = ConsoleColor.Black;
                             Console.ForegroundColor = ConsoleColor.White;
                             if ((index + 1).ToString().Length < 2)
-                            {
                                 Console.Write("  ");
-                            }
                             else
-                            {
                                 Console.Write(" ");
-                            }
                         }
                         else
                         {
@@ -114,13 +110,9 @@ namespace Symbolus
 
                         c = ' ';
                         if (type == "weapon" && (index < goods.Count))
-                        {
-                            WriteListItem(goods[index].weapon, 18, false);
-                        }
+                            WriteListItemLevel(goods[index].weapon, 18, false, goods[index].weapon.level);
                         else if (type == "armor" && (firstListed + listed < goods.Count()))
-                        {
                             WriteListItem(goods[index].armor, 18, false);
-                        }
                         else if (type == "potion" && (firstListed + listed < goods.Count()))
                         {
                             string name = goods[index].potion.name;
@@ -136,11 +128,11 @@ namespace Symbolus
                         else
                         {
                             Console.Write("                  ");
-                            if(type == "potion")
+                            if (type == "potion")
                                 i += 21;
-                        }                        
+                        }
 
-                        if(type != "potion")
+                        if (type != "potion")
                             i += 21;
                         listed++;
                     }
@@ -265,7 +257,7 @@ namespace Symbolus
                 else if (keyinfo.Key == ConsoleKey.Escape)
                 {
                     Program.PlaySound("inv2");
-                    Program.nextDisplayed = Program.Screen.Map;                    
+                    Program.nextDisplayed = Program.Screen.Map;
                     if (Program.musicOn)
                     {
                         Program.musics[Program.cmusic].Stop();
@@ -292,7 +284,7 @@ namespace Symbolus
                     if ((good.type == "potion" && good.potion.cost <= Program.player.money) || (good.type != "potion" && good.level <= Program.player.level))
                     {
                         good.Buy();
-                        if (good.type != "potion") 
+                        if (good.type != "potion")
                         {
                             goods.RemoveAt(firstListed + cursorPos);
 
@@ -316,7 +308,19 @@ namespace Symbolus
         /// </summary>
         protected void WriteListItem(Equipment item, int length, bool writeEquippedSign)
         {
+            WLI(item, length, writeEquippedSign, -1);
+        }
+        protected void WriteListItemLevel(Equipment item, int length, bool writeEquippedSign, int level)
+        {
+            WLI(item, length, writeEquippedSign, level);
+        }
+        private void WLI(Equipment item, int length, bool writeEquippedSign, int level)
+        {
             string output = item.name;
+
+            if (level > -1)
+                output += $" - lvl.{level}";
+
             if (item.equipped && !writeEquippedSign)
                 output += " [E]";
 

@@ -4,7 +4,7 @@
 				    ~fff #                             # fff~
 				    ~fff #      Pusztaszentistván      # fff~
 				    ~fff #           Krónikái          # fff~
-				    ~fff # DEMO                   DEMO # fff~
+				    ~fff #                             # fff~
 				    ~fff ############################### fff~
 				    ~fff #                             # fff~
 				    ~fff #                             # fff~

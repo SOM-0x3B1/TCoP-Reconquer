@@ -1,6 +1,6 @@
 weapon
-Bot;normal;8;0. szint $ Mindenhol ott van. Mindenre használható. Mindenki szereti.;0
-Seprű;good;20;1. szint $ Ha macskák ellen beválik, a suttyók ellen miért ne működne?;1
-Csúzli;rare;35;2. szint $ Lufikról gyakran lepattan. Suttyókról soha.;2
-Farönk;epic;70;3. szint $ A bot szteroidos nagybátyja. Multifunkcionális.;3
-Fűnyíró;legendary;100;4. szint $ Két halálos penge. 3000 rpm. A tökéletes eszköz a suttyótlanításra.;4
+Bot;normal;8;Mindenhol ott van. Mindenre használható. Mindenki szereti.;0
+Seprű;good;20;Ha macskák ellen beválik, a suttyók ellen miért ne működne?;1
+Csúzli;rare;35;Lufikról gyakran lepattan. Suttyókról soha.;2
+Farönk;epic;70;A bot szteroidos nagybátyja. Multifunkcionális.;3
+Fűnyíró;legendary;100;Két halálos penge. 3000 rpm. A tökéletes eszköz a suttyótlanításra.;4

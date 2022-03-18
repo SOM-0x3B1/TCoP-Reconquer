@@ -59,9 +59,9 @@ using System.Runtime.InteropServices;
 ///     - K.O. után fura effekt-clear
 ///     - Ellenfél ütközési sorrend
 ///     - Ellenfél képességei
-///     - Inventory length
 ///     - Potionok árának kiírása
 ///     - 1 körös effektek listájának eltűnése
+///     - random sebzés
 ///     - random sebzés
 ///     
 /// </summary>
@@ -118,19 +118,28 @@ namespace Symbolus
         /// Hangok (nem zenék) lejátszása
         /// </summary>
         /// <param name="sound">A .wav fájl neve</param>
+        
+        
         public static void PlaySound(string sound)
         {
             if (soundOn)
+                PlaySND(sound);            
+        }
+        public static void PlaySound(string sound, bool bypass)
+        {
+            if(bypass)
+                PlaySND(sound);
+        }        
+        private static void PlaySND(string sound)
+        {
+            try
             {
-                try
-                {
-                    StringBuilder sb = new StringBuilder();
-                    mciSendString("close " + sound, null, 0, IntPtr.Zero);
-                    mciSendString($@"open assets\sfx\{sound}.wav type waveaudio alias " + sound, sb, 0, IntPtr.Zero);
-                    mciSendString("play " + sound, null, 0, IntPtr.Zero);
-                }
-                catch { }
+                StringBuilder sb = new StringBuilder();
+                mciSendString("close " + sound, null, 0, IntPtr.Zero);
+                mciSendString($@"open assets\sfx\{sound}.wav type waveaudio alias " + sound, sb, 0, IntPtr.Zero);
+                mciSendString("play " + sound, null, 0, IntPtr.Zero);
             }
+            catch { }
         }
 
         /*public static ConsoleKey ReadInput()
@@ -330,16 +339,38 @@ namespace Symbolus
                 string line = title[i];               
                 
                 Console.WriteLine(line);
-                //if (line != "")
-                    //Thread.Sleep(495);
-
+                /*if (line != "")
+                    Thread.Sleep(495);*/
             }
-            ConsoleKeyInfo keyinfo = Console.ReadKey(true);
-            while (keyinfo.Key != ConsoleKey.Enter && keyinfo.Key != ConsoleKey.Spacebar)
+            ConsoleKey key = Console.ReadKey(true).Key;
+            /*int p = 0;
+            ConsoleColor[] colors = { ConsoleColor.Red, ConsoleColor.Yellow, ConsoleColor.Blue, ConsoleColor.White };*/
+            while (key != ConsoleKey.Enter && key != ConsoleKey.Spacebar)
             {
                 while (Console.KeyAvailable)
-                    keyinfo = Console.ReadKey(true);
-                keyinfo = Console.ReadKey(true);
+                    key = Console.ReadKey(true).Key;
+                key = Console.ReadKey(true).Key;
+
+               /* while (!Console.KeyAvailable)
+                {
+                    Console.SetCursorPosition(0, 21);
+
+                    Console.ForegroundColor = colors[p];
+
+
+
+
+                    Console.WriteLine(title[21]);
+                    
+
+                    p++;
+                    if (p > 3)
+                        p = 0;
+
+                    Thread.Sleep(1000);
+                }*/
+
+                key = Console.ReadKey(true).Key;
             }
             PlaySound("select");
 
@@ -392,7 +423,7 @@ namespace Symbolus
     public class Tutorial
     {
         public static List<List<TextBox>> listOfTextBoxes = new List<List<TextBox>>();
-        public static int progress = 1;
+        public static int progress = 9;
         public static int textBoxIndex = 0;
         public static bool completed = false;
         public static bool disabled = false;
@@ -403,7 +434,6 @@ namespace Symbolus
             textBoxIndex = 0;
         }
     }
-
 
     public class Position
     {

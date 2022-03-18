@@ -29,9 +29,7 @@ namespace Symbolus
                 for (int i = 0; i < Map.centerSpace.Length; i++)
                 {
                     if (j >= Program.stats.Length || i >= Program.stats[0].Length)
-                    {
                         Console.Write(Map.centerSpace[i]);
-                    }
                     else
                     {
                         c = Program.stats[j][i];
@@ -571,7 +569,7 @@ namespace Symbolus
                         if (!Program.player.InteractionCheck() && Program.player.sprint) //itt a duplalépést hajtom végre; megvizsgálom, hogy végre kell-e hajtani, illetve lefuttatom az interakció keresőt
                         {
                             Program.player.move(keyinfo);
-                            Program.player.S -= 2;
+                            Program.player.S = Program.player.MaxS - 5;
                             Program.player.InteractionCheck();
                         }
 
