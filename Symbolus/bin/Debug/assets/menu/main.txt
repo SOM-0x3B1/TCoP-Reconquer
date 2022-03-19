@@ -1,32 +1,32 @@
-				    ~fffffffffffffffffffffffffffffffffffffff~
-				    ~fff                                 fff~
-				    ~fff ############################### fff~
-				    ~fff #                             # fff~
-				    ~fff #      Pusztaszentistván      # fff~
-				    ~fff #           Krónikái          # fff~
-				    ~fff #                             # fff~
-				    ~fff ############################### fff~
-				    ~fff #                             # fff~
-				    ~fff #                             # fff~
-				    ~fff #      11111111111111111      # fff~
-				    ~fff #   11111    Start    11111   # fff~
-				    ~fff #      11111111111111111      # fff~
-				    ~fff #                             # fff~
-				    ~fff #                             # fff~
-				    ~fff #      22222222222222222      # fff~
-				    ~fff #   22222 Beállítások 22222   # fff~
-				    ~fff #      22222222222222222      # fff~
-				    ~fff #                             # fff~
-				    ~fff #                             # fff~
-				    ~fff #      33333333333333333      # fff~
-				    ~fff #   33333   Kilépés   33333   # fff~
-				    ~fff #      33333333333333333      # fff~
-				    ~fff #                             # fff~
-				    ~fff #                             # fff~
-				    ~fff ############################### fff~
-				    ~fff                                 fff~
-				    ~fffffffffffffffffffffffffffffffffffffff~
-				    ~fffffffffffffffffffffffffffffffffffffff~
+                            ~ffffffffffffffffffffffffffffffffffffffffffffffffffffffff~
+                            ~fff                                                  fff~
+                            ~fff ################################################ fff~
+                            ~fff #                                              # fff~
+                            ~fff #     The Chronicles o\ Pusztaszentistván      # fff~
+                            ~fff #                  Reconquer                   # fff~
+                            ~fff #                                              # fff~
+                            ~fff ################################################ fff~
+                            ~fff         #                             #          fff~
+                            ~fffffffffff #                             # ffffffffffff~
+                                    ~fff #      11111111111111111      # fff~         
+                             ****   ~fff #   11111    Start    11111   # fff~ bb '    
+                            *~~~~*  ~fff #      11111111111111111      # fff~ bb ' bb 
+                            *~~~~*  ~fff #                             # fff~    '    
+                             **~*   ~fff #                             # fff~    '--- 
+                               ~    ~fff #      22222222222222222      # fff~    ' bb 
+                            ** ~    ~fff #   22222 Beállítások 22222   # fff~    '    
+                               **   ~fff #      22222222222222222      # fff~  b '    
+                               ~    ~fff #                             # fff~    '    
+                               ~    ~fff #                             # fff~ bb ' bb 
+                             **~ *  ~fff #      33333333333333333      # fff~    ' bb 
+                             ****   ~fff #   33333   Kilépés   33333   # fff~    ' bb 
+                              **    ~fff #      33333333333333333      # fff~ ---'    
+                               ~    ~fff #                             # fff~  bb' bb 
+                             * ~    ~fff #                             # fff~    ' bb 
+                               ~ ** ~fff ############################### fff~    '    
+                               ~    ~fff                                 fff~    '--- 
+                               ~    ~fffffffffffffffffffffffffffffffffffffff~  b '    
+                            ** ~    ~fffffffffffffffffffffffffffffffffffffff~    '    
 =
 1:start
 2:settings

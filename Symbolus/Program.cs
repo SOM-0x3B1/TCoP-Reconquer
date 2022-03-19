@@ -62,7 +62,7 @@ using System.Runtime.InteropServices;
 ///     - Potionok árának kiírása
 ///     - 1 körös effektek listájának eltűnése
 ///     - random sebzés
-///     - random sebzés
+///     - hullámzó búza és víz
 ///     
 /// </summary>
 
@@ -134,9 +134,8 @@ namespace Symbolus
         {
             try
             {
-                StringBuilder sb = new StringBuilder();
                 mciSendString("close " + sound, null, 0, IntPtr.Zero);
-                mciSendString($@"open assets\sfx\{sound}.wav type waveaudio alias " + sound, sb, 0, IntPtr.Zero);
+                mciSendString($@"open assets\sfx\{sound}.wav type waveaudio alias " + sound, new StringBuilder(), 0, IntPtr.Zero);
                 mciSendString("play " + sound, null, 0, IntPtr.Zero);
             }
             catch { }

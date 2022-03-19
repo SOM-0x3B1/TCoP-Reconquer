@@ -108,13 +108,9 @@ namespace Symbolus
                             Console.Write(index + 1);
                             Console.BackgroundColor = ConsoleColor.Black;
                             if ((index + 1).ToString().Length < 2)
-                            {
                                 Console.Write("  ");
-                            }
                             else
-                            {
                                 Console.Write(" ");
-                            }
                         }
                         else
                         {
@@ -124,21 +120,13 @@ namespace Symbolus
 
                         c = ' ';
                         if (page == 1 && (index < weapons.Count()))
-                        {
                             WriteListItem(weapons[index], 20, false);
-                        }
                         else if (page == 2 && (firstListed + listed < armors.Count()))
-                        {
                             WriteListItem(armors[index], 20, false);
-                        }
                         else if (page == 3 && (firstListed + listed < potions.Count()))
-                        {
                             WriteListItem(potions.ElementAt(index).Value, 20);
-                        }
                         else
-                        {
                             Console.Write("                    ");
-                        }
 
                         i += 23;
                         listed++;

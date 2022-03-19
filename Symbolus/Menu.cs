@@ -61,6 +61,16 @@ namespace Symbolus
                         Console.BackgroundColor = ConsoleColor.DarkRed;
                         Console.ForegroundColor = ConsoleColor.DarkRed;
                     }
+                    else if (c == (char)39 || c == '-')
+                    {
+                        Console.BackgroundColor = ConsoleColor.DarkGray;
+                        Console.ForegroundColor = ConsoleColor.White;
+                    }
+                    else if (c == '*')
+                    {
+                        Console.BackgroundColor = ConsoleColor.DarkGreen;
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    }
                     else if (c == 'ß')
                     {
                         Console.BackgroundColor = ConsoleColor.DarkYellow;
@@ -91,6 +101,8 @@ namespace Symbolus
                     }
                     else
                     {
+                        if (c == '\\')
+                            c = 'f';
                         Console.BackgroundColor = ConsoleColor.Black;
                         Console.ForegroundColor = ConsoleColor.White;
                     }
@@ -126,6 +138,7 @@ namespace Symbolus
         /// </summary>
         private void Controls()
         {
+            menuPage.waveEngine.Render();
             ConsoleKeyInfo keyinfo;
             while (Console.KeyAvailable)
             {
@@ -231,6 +244,7 @@ namespace Symbolus
         public int maxY; //a matrix utolsó kitöltött sora
         public string[] matrix = new string[40]; //karakter-rajz
         public List<string> commands = new List<string>(); //gombokhoz tartozó utasítátok
+        public WaveEngine waveEngine;
 
         public MenuPage() { }
 
@@ -257,8 +271,9 @@ namespace Symbolus
                 {
                     maxY = i - 1;
                     commands.Add(r.ReadLine().Split(':')[1]);
-                }
+                }                
             }
+            waveEngine = new WaveEngine(matrix, maxY, 14);
         }
     }
 
