@@ -120,7 +120,7 @@ namespace Symbolus
                 Program.mapRefresh = false;
                 Program.PlaySound("newmap");
                 Gate gate = Program.mapScreen.map.gates.First(a => a.x == this.x && a.y == this.y);
-                Program.mapScreen.map.waveEngine.Stop();
+                //Program.mapScreen.map.waveEngine.Stop();
                 Program.mapScreen.LoadMap(gate.destination);
                 this.x = gate.teleportToX;
                 this.y = gate.teleportToY;

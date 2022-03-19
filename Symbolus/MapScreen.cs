@@ -21,7 +21,7 @@ namespace Symbolus
         /// </summary>
         public void Display()
         {
-            map.waveEngine.Pause();
+            //map.waveEngine.Pause();
             Console.Clear();
             char c;
             int n = 0;
@@ -314,7 +314,7 @@ namespace Symbolus
         /// <param name="positions">Frissítendő pozíciók</param>
         public void RefreshPixels(List<Position> positions) //fixed with 3916ea8b
         {
-            map.waveEngine.Pause();
+            //map.waveEngine.Pause();
             int lastx = Console.CursorLeft;
             int lasty = Console.CursorTop;
             foreach (Position pos in positions)
@@ -537,7 +537,7 @@ namespace Symbolus
         private void Controls()
         {
             Thread.Sleep(100);
-            map.waveEngine.Start();
+            //map.waveEngine.Start();
 
             ConsoleKeyInfo keyinfo;
             while (Console.KeyAvailable)

@@ -12,7 +12,7 @@ namespace Symbolus
         public string name;
         public string[] matrix = new string[40]; //karakter-rajz
         public int maxY; ////a matrix utolsó kitöltött sora
-        public WaveEngine waveEngine;
+        //public WaveEngine waveEngine;
         public int darkness; //A játékos által látható terület sugara (használatlan)        
         public string music; //alap zene
         public List<Gate> gates = new List<Gate>(); //új mapokra vezető "átjárók"
@@ -89,7 +89,7 @@ namespace Symbolus
                     k++;                    
                 }
 
-                waveEngine = new WaveEngine(matrix, maxY, maxY / 2, centerSpaceLength);
+                //waveEngine = new WaveEngine(matrix, maxY, maxY / 2, centerSpaceLength);
             }
         }
 

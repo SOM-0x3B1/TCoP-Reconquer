@@ -150,7 +150,7 @@ namespace Symbolus
                             }
                         }
                     }
-                    if (wE.i > -wE.height && !wE.fromRestart)
+                    if (wE.i > -wE.height /*&& !wE.fromRestart*/)
                         try
                         {
                             Thread.Sleep(200);

@@ -1,29 +1,29 @@
-				    ~fffffffffffffffffffffffffffffffffffffff~
-				    ~fff                                 fff~
-				    ~fff ############################### fff~
-				    ~fff #           PAUSED            # fff~
-				    ~fff ############################### fff~
-				    ~fff #                             # fff~
-				    ~fff #                             # fff~
-				    ~fff #      11111111111111111      # fff~
-				    ~fff #   11111   Vissza    11111   # fff~
-				    ~fff #      11111111111111111      # fff~
-				    ~fff #                             # fff~
-				    ~fff #                             # fff~
-				    ~fff #      22222222222222222      # fff~
-				    ~fff #   22222 Beállítások 22222   # fff~
-				    ~fff #      22222222222222222      # fff~
-				    ~fff #                             # fff~
-				    ~fff #                             # fff~
-				    ~fff #      33333333333333333      # fff~
-				    ~fff #   33333   Kilépés   33333   # fff~
-				    ~fff #      33333333333333333      # fff~
-				    ~fff #                             # fff~
-				    ~fff #                             # fff~
-				    ~fff ############################### fff~
-				    ~fff                                 fff~
-				    ~fffffffffffffffffffffffffffffffffffffff~
-				    ~fffffffffffffffffffffffffffffffffffffff~
+                                    ~fffffffffffffffffffffffffffffffffffffff~
+                                    ~fff                                 fff~
+                                    ~fff ############################### fff~
+                                    ~fff #           PAUSED            # fff~
+                                    ~fff ############################### fff~
+                                    ~fff #                             # fff~
+                                    ~fff #                             # fff~
+                                    ~fff #      11111111111111111      # fff~
+                                    ~fff #   11111   Vissza    11111   # fff~
+                                    ~fff #      11111111111111111      # fff~
+                                    ~fff #                             # fff~
+                                    ~fff #                             # fff~
+                                    ~fff #      22222222222222222      # fff~
+                                    ~fff #   22222 Beállítások 22222   # fff~
+                                    ~fff #      22222222222222222      # fff~
+                                    ~fff #                             # fff~
+                                    ~fff #                             # fff~
+                                    ~fff #      33333333333333333      # fff~
+                                    ~fff #   33333   Kilépés   33333   # fff~
+                                    ~fff #      33333333333333333      # fff~
+                                    ~fff #                             # fff~
+                                    ~fff #                             # fff~
+                                    ~fff ############################### fff~
+                                    ~fff                                 fff~
+                                    ~fffffffffffffffffffffffffffffffffffffff~
+                                    ~fffffffffffffffffffffffffffffffffffffff~
 =
 1:back
 2:settings

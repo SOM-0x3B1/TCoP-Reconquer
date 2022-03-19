@@ -1,28 +1,28 @@
-		  ~ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff~
-		  ~fff                                                        fff~
-		  ~fff ####################################"""""""""""""""""" fff~
-		  ~fff #             KÉPESSÉGEK            "  Pontok: %     " fff~
-		  ~fff ####################################"""""""""""""""""" fff~
-		  ~fff #                                                    # fff~
-		  ~fff # -------------------  1. szint  ------------------- # fff~
-		  ~fff #                                                    # fff~
-		  ~fff #   444444444444444 555555555555555 66666666666666   # fff~
-		  ~fff #   4 *           4 5 *           5 6 *          6   # fff~
-		  ~fff #   444444444444444 555555555555555 66666666666666   # fff~
-		  ~fff #                                                    # fff~
-		  ~fff # -------------------  2. szint  ------------------- # fff~
-		  ~fff #                                                    # fff~
-		  ~fff #   444444444444444 555555555555555 66666666666666   # fff~
-		  ~fff #   4 *           4 5 *           5 6 *          6   # fff~
-		  ~fff #   444444444444444 555555555555555 66666666666666   # fff~
-		  ~fff #                                                    # fff~
-		  ~fff # -------------------  3. szint  ------------------- # fff~
-		  ~fff #                                                    # fff~
-		  ~fff #   444444444444444 555555555555555 66666666666666   # fff~
-		  ~fff #   4 *           4 5 *           5 6 *          6   # fff~
-		  ~fff #   444444444444444 555555555555555 66666666666666   # fff~
-		  ~fff #                                                    # fff~
-		  ~fff ###################################################### fff~
-		  ~fff                                                        fff~
-		  ~ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff~
-		  ~ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff~
+                  ~ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff~
+                  ~fff                                                        fff~
+                  ~fff ####################################"""""""""""""""""" fff~
+                  ~fff #             KÉPESSÉGEK            "  Pontok: %     " fff~
+                  ~fff ####################################"""""""""""""""""" fff~
+                  ~fff #                                                    # fff~
+                  ~fff # -------------------  1. szint  ------------------- # fff~
+                  ~fff #                                                    # fff~
+                  ~fff #   444444444444444 555555555555555 66666666666666   # fff~
+                  ~fff #   4 *           4 5 *           5 6 *          6   # fff~
+                  ~fff #   444444444444444 555555555555555 66666666666666   # fff~
+                  ~fff #                                                    # fff~
+                  ~fff # -------------------  2. szint  ------------------- # fff~
+                  ~fff #                                                    # fff~
+                  ~fff #   444444444444444 555555555555555 66666666666666   # fff~
+                  ~fff #   4 *           4 5 *           5 6 *          6   # fff~
+                  ~fff #   444444444444444 555555555555555 66666666666666   # fff~
+                  ~fff #                                                    # fff~
+                  ~fff # -------------------  3. szint  ------------------- # fff~
+                  ~fff #                                                    # fff~
+                  ~fff #   444444444444444 555555555555555 66666666666666   # fff~
+                  ~fff #   4 *           4 5 *           5 6 *          6   # fff~
+                  ~fff #   444444444444444 555555555555555 66666666666666   # fff~
+                  ~fff #                                                    # fff~
+                  ~fff ###################################################### fff~
+                  ~fff                                                        fff~
+                  ~ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff~
+                  ~ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff~
