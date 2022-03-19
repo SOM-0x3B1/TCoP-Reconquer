@@ -22,6 +22,7 @@ namespace Symbolus
         /// </summary>
         public void Display()
         {
+            menuPage.waveEngine.Stop();
             Console.Clear();
             char c;
 
@@ -131,6 +132,7 @@ namespace Symbolus
                 this.menuPage = new MenuPage("main");
                 Program.nextDisplayed = Program.Screen.Menu;
             }
+            menuPage.waveEngine.Stop();
         }
 
         /// <summary>
@@ -138,7 +140,8 @@ namespace Symbolus
         /// </summary>
         private void Controls()
         {
-            menuPage.waveEngine.Render();
+            menuPage.waveEngine.Start();
+
             ConsoleKeyInfo keyinfo;
             while (Console.KeyAvailable)
             {
@@ -168,6 +171,7 @@ namespace Symbolus
             {                
                 string cmd = this.menuPage.commands[this.cursorPos-1];
                 Program.PlaySound("select");
+                menuPage.waveEngine.Stop();
                 switch (cmd)
                 {
                     case "start":
@@ -231,7 +235,7 @@ namespace Symbolus
                         Program.nextDisplayed = Program.Screen.Combat;
                         break;
                 }                
-            }
+            }            
         }
     }
 
@@ -273,7 +277,7 @@ namespace Symbolus
                     commands.Add(r.ReadLine().Split(':')[1]);
                 }                
             }
-            waveEngine = new WaveEngine(matrix, maxY, 14);
+            waveEngine = new WaveEngine(matrix, maxY, maxY/2);
         }
     }
 

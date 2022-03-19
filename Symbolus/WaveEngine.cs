@@ -10,14 +10,20 @@ namespace Symbolus
     public class WaveEngine
     {
         public WaveCell[,] cells;
+        public bool enable = true;
         private int width;
         private int height;
         private int firstX = int.MaxValue;
+        private int i;
         private int n;
+        private bool m;
         private int pacing;
         private int countOfWaves;
+        private bool fromRestart = false;        
         public enum WaveCell { none, wheat, water };
-        
+
+        public Thread renderer;
+
 
         public WaveEngine(string[] map, int pacing)
         {
@@ -29,11 +35,22 @@ namespace Symbolus
         {
             cells = new WaveCell[maxY + 1, map[0].Length];
             height = maxY + 1;
-            BuildCells(map, pacing);            
+            BuildCells(map, pacing);
         }
+        public WaveEngine(string[] map, int maxY, int pacing, int firstX)
+        {
+            cells = new WaveCell[maxY + 1, map[0].Length + firstX];
+            height = maxY + 1;
+            this.firstX = firstX;
+            BuildCells(map, pacing);
+        }
+
         private void BuildCells(string[] map, int pacing)
         {
             width = map[0].Length;
+
+            if (firstX == int.MaxValue)
+                m = true;           
 
             for (int i = 0; i < height && map[i] != null; i++)
             {
@@ -42,53 +59,86 @@ namespace Symbolus
                     switch (map[i][j])
                     {
                         case 'f':
-                            cells[i, j] = WaveCell.wheat;
-                            if (j < firstX)
-                                firstX = j;
+                            if (m)
+                            {
+                                cells[i, j] = WaveCell.wheat;
+                                if (j < firstX)
+                                    firstX = j;
+                            }
+                            else
+                                cells[i, j + firstX] = WaveCell.wheat;
                             break;
-                        /*case '~':
-                            cells[i, j] = WaveCell.water;
-                            if (j < firstX)
-                                firstX = j;
-                            break;*/
+                            /*case '~':
+                                cells[i, j] = WaveCell.water;
+                                if (j < firstX)
+                                    firstX = j;
+                                break;*/
                     }
                 }
             }
 
             this.pacing = pacing;
             this.countOfWaves = height / pacing * 2;
+            if(!m)
+                width = map[0].Length + firstX;
+
+            renderer = new Thread(() => Render(this));
         }
 
-        public void Render()
+        public void Start()
+        {                      
+            if (renderer.ThreadState == ThreadState.Unstarted)
+                renderer.Start();
+            else
+                enable = true;
+        }
+        public void Stop()
+        {
+            renderer.Abort();
+            renderer = new Thread(() => Render(this));
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Black;
+            fromRestart = true;
+        }
+        public void Pause()
+        {
+            enable = false;
+            fromRestart = true;
+        }
+
+        private static void Render(WaveEngine wE)
         {
             while (true)
             {
-                for (int i = -height; i < 0; i++)
+                if (!wE.fromRestart)
+                    wE.i = -wE.height;  
+
+                for (; wE.i < 0; wE.i++)
                 {
-                    for (int y = 0; y < height; y++)
+                    for (int y = 0; y < wE.height && wE.enable; y++)
                     {
-                        for (int x = firstX; x < width; x++)
+                        for (int x = wE.firstX; x < wE.width && wE.enable; x++)
                         {
-                            n = y;
-                            for (int j = 0; j < countOfWaves * 2; j++)
+                            wE.n = y;
+                            for (int j = 0; j < wE.countOfWaves * 2 && wE.enable; j++)
                             {
-                                if (cells[y, x] == WaveCell.wheat)
+                                if (wE.cells[y, x] == WaveCell.wheat)
                                 {
-                                    if (n == i || n == i + 1)
+                                    if (wE.n == wE.i || wE.n == wE.i + 1)
                                     {
                                         Console.SetCursorPosition(x, y);
                                         Console.ForegroundColor = ConsoleColor.Black;
                                         Console.BackgroundColor = ConsoleColor.Yellow;
                                         Console.Write('f');
                                     }
-                                    if (n == i - 1 || n == i + 2)
+                                    if (wE.n == wE.i - 1 || wE.n == wE.i + 2)
                                     {
                                         Console.SetCursorPosition(x, y);
                                         Console.ForegroundColor = ConsoleColor.DarkGray;
                                         Console.BackgroundColor = ConsoleColor.Yellow;
                                         Console.Write('f');
                                     }
-                                    else if (n == i - 2 || (j == countOfWaves - 1 && n == i + 13))
+                                    else if (wE.n == wE.i - 2 || (j == wE.countOfWaves - 1 && wE.n == wE.i + 13))
                                     {
                                         Console.SetCursorPosition(x, y);
                                         Console.ForegroundColor = ConsoleColor.DarkYellow;
@@ -96,13 +146,20 @@ namespace Symbolus
                                         Console.Write('f');
                                     }
                                 }
-                                n -= pacing;
+                                wE.n -= wE.pacing;
                             }
                         }
                     }
-                    if(i >- height)
-                        Thread.Sleep(200);
+                    if (wE.i > -wE.height && !wE.fromRestart)
+                        try
+                        {
+                            Thread.Sleep(200);
+                        }
+                        catch { }
                 }
+
+                if (wE.fromRestart)
+                    wE.fromRestart = false;
             }
         }
     }
