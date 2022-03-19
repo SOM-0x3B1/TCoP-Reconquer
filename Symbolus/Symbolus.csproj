@@ -7,7 +7,7 @@
     <ProjectGuid>{3A2451A3-B9DB-41D9-ADD4-2DFEA8610087}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Symbolus</RootNamespace>
-    <AssemblyName>TCoP-Reconquer</AssemblyName>
+    <AssemblyName>Reconquer</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
