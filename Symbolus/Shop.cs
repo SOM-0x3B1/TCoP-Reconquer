@@ -16,6 +16,7 @@ namespace Symbolus
 
         private string[] matrix = new string[40]; //karakter-rajz
         private int maxY; //matrix utolsó sora
+        public WaveEngine waveEngine;
 
         private int cursorPos = 0; //"kurzor" veritkális pozíciója
         private int firstListed = 0; //a kilistázás kezdete
@@ -44,6 +45,8 @@ namespace Symbolus
                 }
                 maxY = i - 1;
             }
+
+            waveEngine = new WaveEngine(matrix, maxY, maxY / 2);
         }
 
         /// <summary>
@@ -51,6 +54,7 @@ namespace Symbolus
         /// </summary>
         public void Display()
         {
+            waveEngine.Stop();
             Console.Clear();
             char c;
             int listed = 0;
@@ -209,6 +213,7 @@ namespace Symbolus
         /// </summary>
         public void Controls()
         {
+            waveEngine.Start();
             ConsoleKeyInfo keyinfo;
             while (Console.KeyAvailable)
             {
@@ -256,6 +261,7 @@ namespace Symbolus
                 }
                 else if (keyinfo.Key == ConsoleKey.Escape)
                 {
+                    waveEngine.Stop();
                     Program.PlaySound("inv2");
                     Program.nextDisplayed = Program.Screen.Map;
                     if (Program.musicOn)

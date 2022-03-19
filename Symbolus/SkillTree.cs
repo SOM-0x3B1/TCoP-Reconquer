@@ -15,6 +15,7 @@ namespace Symbolus
 
         public string[] matrix = new string[40]; //karakter-rajz
         public int maxY; //matrix utolsó sora
+        public WaveEngine waveEngine;
 
         private int cursorPosX = 3;
         private int cursorPosY = 0;
@@ -35,6 +36,8 @@ namespace Symbolus
                 }
                 maxY = i - 1;
             }
+
+            waveEngine = new WaveEngine(matrix, maxY, maxY / 2);
         }
 
         /// <summary>

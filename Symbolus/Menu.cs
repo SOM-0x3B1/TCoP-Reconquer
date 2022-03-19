@@ -289,6 +289,7 @@ namespace Symbolus
     {
         public int maxY; //a matrix utolsó kitöltött sora
         public string[] matrix = new string[40]; //karakter-rajz
+        private WaveEngine waveEngine;
 
         public int gainedXP;
         public int gainedMoney;
@@ -307,6 +308,7 @@ namespace Symbolus
                 }
                 maxY = i - 1;
             }
+            waveEngine = new WaveEngine(matrix, maxY, maxY / 2);
         }
 
         public void Display(int xp, int money, int hits, int damage)
@@ -320,6 +322,7 @@ namespace Symbolus
         }
         public void Display()
         {
+            waveEngine.Stop();
             Console.Clear();
             char c;
             for (int j = 0; j <= maxY; j++)
@@ -391,6 +394,7 @@ namespace Symbolus
 
         public void Controls()
         {
+            waveEngine.Start();
             ConsoleKeyInfo keyinfo;
             while (Console.KeyAvailable)
             {
@@ -400,6 +404,7 @@ namespace Symbolus
 
             if (keyinfo.Key == ConsoleKey.Enter || keyinfo.Key == ConsoleKey.Spacebar)
             {
+                waveEngine.Stop();
                 Program.PlaySound("select");
                 Program.nextDisplayed = Program.Screen.Map;
 

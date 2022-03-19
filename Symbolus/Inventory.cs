@@ -14,6 +14,7 @@ namespace Symbolus
     {        
         private string[] matrix = new string[40]; //karakter-rajz
         private int maxY; //matrix utolsó sora
+        public WaveEngine waveEngine;
 
         private int cursorPos = 0; //"kurzor" veritkális pozíciója
         private int page = 1; //"kurzor" horizntális pozíciója (lap)
@@ -40,6 +41,7 @@ namespace Symbolus
                 }
                 maxY = i-2;
             }
+            waveEngine = new WaveEngine(matrix, maxY, maxY / 2);
         }
 
 
@@ -48,6 +50,7 @@ namespace Symbolus
         /// </summary>
         public void Display()
         {
+            waveEngine.Stop();
             Console.Clear();
             char c;
             int listed = 0;
@@ -206,6 +209,7 @@ namespace Symbolus
         /// </summary>
         protected void Controls()
         {
+            waveEngine.Start();
             ConsoleKeyInfo keyinfo;
             while (Console.KeyAvailable)
             {
@@ -264,6 +268,7 @@ namespace Symbolus
                 }
                 else if (keyinfo.Key == ConsoleKey.E)
                 {
+                    waveEngine.Stop();
                     Program.PlaySound("inv2");
                     if(Program.combat)
                         Program.nextDisplayed = Program.Screen.Combat;
@@ -283,6 +288,7 @@ namespace Symbolus
                 }
                 else if (keyinfo.Key == ConsoleKey.Escape)
                 {
+                    waveEngine.Stop();
                     Program.PlaySound("pause");
                     Program.menu.backFromPause = true;
                     Program.menu.menuPage = new MenuPage("pause");
@@ -335,6 +341,7 @@ namespace Symbolus
                 }
                 else if (page == 4)
                 {
+                    waveEngine.Stop();
                     Program.PlaySound("inv2");
                     if (Program.combat)
                         Program.nextDisplayed = Program.Screen.Combat;
