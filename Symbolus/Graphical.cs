@@ -8,11 +8,9 @@ namespace Symbolus
     /// <summary>
     /// Statikus karakter-rajzok háttérnek
     /// </summary>
-    public class Background
+    public class Background : Displayable
     {
         public string name;
-        public string[] matrix = new string[40];
-        public int maxY;
 
         public Background(string name)
         {
@@ -40,11 +38,9 @@ namespace Symbolus
     /// <summary>
     /// Ellenfeleken megjenlő (1 képkockás) animáció; pl kard, heal, pajzs
     /// </summary>
-    public class Sticker
+    public class Sticker : Displayable
     {
         public string name;
-        public string[] matrix = new string[40];
-        public int maxY;
 
         public Sticker() { }
         public Sticker(string name)

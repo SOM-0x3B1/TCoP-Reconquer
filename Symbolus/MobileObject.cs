@@ -9,7 +9,7 @@ namespace Symbolus
     /// <summary>
     /// Pozícióval rendelkező, térképen elhelyezhető (mobilis) objektum.
     /// </summary>
-    public class MobileObject
+    public class MobileObject : Displayable
     {
         public int x;
         public int y;

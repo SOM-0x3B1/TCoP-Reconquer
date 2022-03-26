@@ -447,4 +447,12 @@ namespace Symbolus
             this.y = y;
         }
     }
+
+    public class Displayable
+    {
+        public string[] matrix = new string[40];
+        public int maxY;
+
+
+    }
 }

@@ -242,11 +242,9 @@ namespace Symbolus
     /// <summary>
     /// Menü lapok (main, pause, settings)
     /// </summary>
-    public class MenuPage
+    public class MenuPage : Displayable
     {
         public string name; //("main", "pause", "settings")
-        public int maxY; //a matrix utolsó kitöltött sora
-        public string[] matrix = new string[40]; //karakter-rajz
         public List<string> commands = new List<string>(); //gombokhoz tartozó utasítátok
         public WaveEngine waveEngine;
 
@@ -285,10 +283,8 @@ namespace Symbolus
     /// <summary>
     /// Győzelem utáni kezelőfelület
     /// </summary>
-    public class WinScreen
+    public class WinScreen : Displayable
     {
-        public int maxY; //a matrix utolsó kitöltött sora
-        public string[] matrix = new string[40]; //karakter-rajz
         private WaveEngine waveEngine;
 
         public int gainedXP;
@@ -317,7 +313,7 @@ namespace Symbolus
             this.gainedMoney = money;
             this.hits = hits;
             this.damage = damage;
-            
+
             this.Display();
         }
         public void Display()
@@ -334,7 +330,7 @@ namespace Symbolus
                     {
                         Console.BackgroundColor = ConsoleColor.DarkGray;
                         Console.ForegroundColor = ConsoleColor.DarkGray;
-                    }                                       
+                    }
                     else if (c == 'f')
                     {
                         Console.BackgroundColor = ConsoleColor.Yellow;
@@ -360,8 +356,8 @@ namespace Symbolus
                     else if (c == '+')
                     {
                         Console.ForegroundColor = ConsoleColor.Green;
-                        Console.Write(gainedMoney.ToString()+" Ft");
-                        i += gainedMoney.ToString().Length+3;
+                        Console.Write(gainedMoney.ToString() + " Ft");
+                        i += gainedMoney.ToString().Length + 3;
                         c = ' ';
                     }
                     else if (c == '&')
@@ -409,12 +405,12 @@ namespace Symbolus
                 Program.nextDisplayed = Program.Screen.Map;
 
                 if (Program.musicOn && Program.newGame)
-                {                    
+                {
                     Program.musics[Program.cmusic].Stop();
                     Program.cmusic = "confusion";
                     Program.musics[Program.cmusic].PlayLooping();
                 }
-                else if(Program.musicOn)
+                else if (Program.musicOn)
                 {
                     Program.musics[Program.cmusic].Stop();
                     Program.cmusic = Program.mapScreen.map.music;
@@ -425,5 +421,5 @@ namespace Symbolus
                 Program.player.money += gainedMoney;
             }
         }
-    }    
+    } 
 }

@@ -7,11 +7,9 @@ namespace Symbolus
     /// <summary>
     /// Karakter-rajzzal alkotott pálya + mobilis objektumok + zene.
     /// </summary>
-    public class Map
+    public class Map : Displayable
     {
         public string name;
-        public string[] matrix = new string[40]; //karakter-rajz
-        public int maxY; ////a matrix utolsó kitöltött sora
         //public WaveEngine waveEngine;
         public int darkness; //A játékos által látható terület sugara (használatlan)        
         public string music; //alap zene

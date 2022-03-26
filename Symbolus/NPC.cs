@@ -18,8 +18,6 @@ namespace Symbolus
         private string name;
         public bool person = false;
 
-        private string[] matrix = new string[40];
-        private int maxY;
         private Background background; //az npc-hez tartozó háttér
         private int currentDialog = 0; //jelenlegi dialógus
         private List<Dialog> dialogs = new List<Dialog>(); //dialógusok

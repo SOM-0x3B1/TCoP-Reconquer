@@ -6,11 +6,9 @@ namespace Symbolus
     /// <summary>
     /// Grafikus lista, melyben egy keretben helyezkedik a tagolt szöveg
     /// </summary>
-    public class TextBox
+    public class TextBox : Displayable
     {
-        private string[] text = new string[4];
-        public int maxY = 3;
-        public string[] matrix = new string[40];
+        private string[] text = new string[4];        
         public string title = "";
 
         private static string[] baseMatrix = new string[4]; //négy soros alapkeret
@@ -33,6 +31,7 @@ namespace Symbolus
         public void BasicKonstruktor(string text)
         {
             this.text = text.Split(' ');
+            maxY = 3;
 
             if (baseMatrix[0] == null)
                 LoadGraphics();

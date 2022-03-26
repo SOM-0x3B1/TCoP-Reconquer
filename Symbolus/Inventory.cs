@@ -10,10 +10,8 @@ namespace Symbolus
     /// Eszköztár (kezelőfelület + tároló)
     /// A játék során "E"-vel meghívható, a játékos fegyvert és páncélt szerelhet fel, illetve főzeteket (gyógyító, erősítő, stb.) fogyaszthat (fogyócikk) el.
     /// </summary>
-    public class Inventory
+    public class Inventory : Displayable
     {        
-        private string[] matrix = new string[40]; //karakter-rajz
-        private int maxY; //matrix utolsó sora
         public WaveEngine waveEngine;
 
         private int cursorPos = 0; //"kurzor" veritkális pozíciója

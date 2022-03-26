@@ -1144,14 +1144,12 @@ namespace Symbolus
     /// <summary>
     /// Egy ellenfél az ellefélcsomón belül
     /// </summary>
-    public class EnemyMember
+    public class EnemyMember : Displayable
     {
         public int HP;
         public int maxHP; //alapérték
         public int protection;
         public int basicProtection; //alapérték
-        public string[] matrix = new string[40];
-        public int maxY;
         public bool KO = false; //le van-e győzve
         public int baseDamage;
         public Sticker sticker; //alap matrica

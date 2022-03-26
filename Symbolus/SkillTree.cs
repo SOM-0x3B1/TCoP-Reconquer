@@ -8,13 +8,11 @@ namespace Symbolus
     /// Kezelőfelület.
     /// Képességfa
     /// </summary>
-    public class SkillTree
+    public class SkillTree : Displayable
     {
         public int freePoints = Program.player.level; //elkölthető pontok
         private int usedPoints = 0; //foglalt pontok
 
-        public string[] matrix = new string[40]; //karakter-rajz
-        public int maxY; //matrix utolsó sora
         public WaveEngine waveEngine;
 
         private int cursorPosX = 3;

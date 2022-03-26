@@ -9,13 +9,11 @@ namespace Symbolus
     /// <summary>
     /// Bizonyos NPC-k boltokkal rendelkeznek. A játékos pénzért vehet ki belőlük felszerelést
     /// </summary>
-    public class Shop
+    public class Shop : Displayable
     {
         List<Good> goods = new List<Good>(); //áru
         string type; // milyen árukat ad (weapon/armor/potion)
 
-        private string[] matrix = new string[40]; //karakter-rajz
-        private int maxY; //matrix utolsó sora
         public WaveEngine waveEngine;
 
         private int cursorPos = 0; //"kurzor" veritkális pozíciója
