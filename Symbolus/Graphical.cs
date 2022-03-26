@@ -18,15 +18,9 @@ namespace Symbolus
 
             using (StreamReader r = new StreamReader(@"assets\bg\" + name + ".txt", Encoding.UTF8)) //beolvasás egy lista alapján
             {
-                string line = "";
                 int i = 0;
-                while (!r.EndOfStream)
-                {
-                    line = r.ReadLine();
-                    matrix[i] = line;
-                    i++;                   
-                }
-                maxY = i-1;
+                BasicMatrixBuilder(r, ref i);
+
                 backgrounds.Add(name, this);
             }
         }
@@ -49,15 +43,8 @@ namespace Symbolus
 
             using (StreamReader r = new StreamReader(@"assets\stickers\" + name + ".txt", Encoding.UTF8)) //beolvasás egy lista alapján
             {
-                string line = "";
                 int i = 0;
-                while (!r.EndOfStream)
-                {
-                    line = r.ReadLine();
-                    matrix[i] = line;
-                    i++;
-                }
-                maxY = i - 1;                
+                BasicMatrixBuilder(r, ref i);
             }
         }
 
@@ -84,7 +71,7 @@ namespace Symbolus
 
             for (int j = 0; j <= temp.maxY; j++)
             {
-                for (int i = 0; i < temp.matrix[0].Length; i++)
+                for (int i = 0; i < temp.maxX; i++)
                 {
                     if (temp.matrix[j][i] == '&')
                     {

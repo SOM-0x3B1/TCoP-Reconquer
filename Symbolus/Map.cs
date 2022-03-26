@@ -32,18 +32,12 @@ namespace Symbolus
 
             using (StreamReader r = new StreamReader(@"assets\maps\" + name + ".txt", Encoding.UTF8))
             {
-                string line = r.ReadLine();
                 int i = 0;
-                while (line != "=") //térkép betöltése
-                {
-                    matrix[i] = line;
-                    i++;
-                    line = r.ReadLine();
-                }
-                maxY = i;
-                string type = "";
+                BasicMatrixBuilder(r, ref i);
 
-                line = r.ReadLine();
+                string type = "";
+                string line = r.ReadLine();
+
                 while (line != "=") //mobilis (pozícióval rendelkező) objektumok betöltése
                 {
                     type = line.Split(':')[0];

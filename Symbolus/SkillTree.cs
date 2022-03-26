@@ -27,12 +27,7 @@ namespace Symbolus
             using (StreamReader r = new StreamReader(@"assets\menu\skill_tree.txt", Encoding.UTF8))
             {
                 int i = 0;
-                while (!r.EndOfStream)
-                {
-                    matrix[i] = r.ReadLine();
-                    i++;
-                }
-                maxY = i - 1;
+                BasicMatrixBuilder(r, ref i);
             }
 
             waveEngine = new WaveEngine(matrix, maxY, maxY / 2);
@@ -46,15 +41,19 @@ namespace Symbolus
             int y = 0;
             int listed = 0;
             int k = -2;
-            description = Skill.allSkills[(cursorPosX + cursorPosY * 3)-1].description;
+            description = Skill.allSkills[(cursorPosX + cursorPosY * 3) - 1].description;
 
             Console.Clear();
             char c;
             for (int j = 0; j <= maxY; j++)
             {
-                for (int i = 0; i < matrix[0].Length; i++)
+                for (int i = 0; i < maxX; i++)
                 {
-                    c = matrix[j][i];
+                    SkipSpace(j, ref i);
+                    if (i < maxX)
+                        c = matrix[j][i];
+                    else
+                        break;
 
                     switch (c)
                     {

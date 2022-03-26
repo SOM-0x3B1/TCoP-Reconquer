@@ -19,7 +19,7 @@ namespace Symbolus
             int i = y + yChange;
             int j = x + xChange;
 
-            if (i > -1 && i < Program.mapScreen.map.maxY && j > -1 && j < Program.mapScreen.map.matrix[0].Length)
+            if (i > -1 && i < Program.mapScreen.map.maxY && j > -1 && j < Program.mapScreen.map.maxX)
             {
                 char c = Program.mapScreen.map.matrix[i][j]; // út/föld van-e alatta
                 if (c != ' ' && c != '-' && c != (char)39)

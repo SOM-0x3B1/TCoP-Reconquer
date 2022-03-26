@@ -89,7 +89,7 @@ namespace Symbolus
             for (int j = 0; j <= background.maxY; j++)
             {
                 Console.Write(Map.centerSpace);
-                for (int i = 0; i < background.matrix[0].Length; i++)
+                for (int i = 0; i < background.maxX; i++)
                 {
                     if(this.matrix[j][i] == ' ')
                         c = background.matrix[j][i];

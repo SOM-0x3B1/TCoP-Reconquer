@@ -109,7 +109,7 @@ namespace Symbolus
         public static bool NPCRefresh = true;
         public static bool mapRefresh = false;//NPC-nél gombváltás-e (igen -> nem beszél; nem -> beszél)
         public static bool combat = false; //folyamatban van-e harc?        
-        public static List<Position> pixelsToRefresh = new List<Position>();        
+        public static List<Position> pixelsToRefresh = new List<Position>();
         public enum Screen { Menu, Map, NPC, Combat, Inventory, ActionMenu, SkillMenu, WinScreen, Shop, SkillTree }
         public static Screen nextDisplayed = Screen.Menu; //következő képernyő
 
@@ -118,18 +118,18 @@ namespace Symbolus
         /// Hangok (nem zenék) lejátszása
         /// </summary>
         /// <param name="sound">A .wav fájl neve</param>
-        
-        
+
+
         public static void PlaySound(string sound)
         {
             if (soundOn)
-                PlaySND(sound);            
+                PlaySND(sound);
         }
         public static void PlaySound(string sound, bool bypass)
         {
-            if(bypass)
+            if (bypass)
                 PlaySND(sound);
-        }        
+        }
         private static void PlaySND(string sound)
         {
             try
@@ -192,12 +192,12 @@ namespace Symbolus
             //Tutorial lépések betöltése
             using (StreamReader r = new StreamReader(@"assets\tutorial.txt", Encoding.UTF8))
             {
-                string[] line; 
+                string[] line;
                 while (!r.EndOfStream)
                 {
                     List<TextBox> textBoxes = new List<TextBox>();
                     line = r.ReadLine().Split('/');
-                    foreach(string text in line)
+                    foreach (string text in line)
                         textBoxes.Add(new TextBox(text, "Tutorial"));
                     Tutorial.listOfTextBoxes.Add(new List<TextBox>(textBoxes));
                 }
@@ -249,7 +249,7 @@ namespace Symbolus
                     fightmenu[i] = r.ReadLine();
                     i++;
                 }
-            }           
+            }
             //Kiütött ellenfél rajzának betöltése
             using (StreamReader r = new StreamReader(@"assets\enemies\ko.txt", Encoding.UTF8))
             {
@@ -272,7 +272,7 @@ namespace Symbolus
                     actionSlots[i] = r.ReadLine();
                     i++;
                 }
-            }           
+            }
             //Akciók listájának betöltése
             using (StreamReader r = new StreamReader(@"assets\actions.txt", Encoding.UTF8))
             {
@@ -322,7 +322,7 @@ namespace Symbolus
             player.inventory.potions.Add("Gyógyfű", new Potion("Gyógyfű", "Biztos segít...", "heal1", 1, 30));
             #endregion*/
             #endregion
-            
+
 
             Thread.Sleep(1000); //Az előkészületek után valamiért időt kell hagyni a programnak.
 
@@ -335,8 +335,8 @@ namespace Symbolus
             //Title screen
             for (int i = 0; i < title.Length; i++)
             {
-                string line = title[i];               
-                
+                string line = title[i];
+
                 Console.WriteLine(line);
                 /*if (line != "")
                     Thread.Sleep(495);*/
@@ -350,24 +350,24 @@ namespace Symbolus
                     key = Console.ReadKey(true).Key;
                 key = Console.ReadKey(true).Key;
 
-               /* while (!Console.KeyAvailable)
-                {
-                    Console.SetCursorPosition(0, 21);
+                /* while (!Console.KeyAvailable)
+                 {
+                     Console.SetCursorPosition(0, 21);
 
-                    Console.ForegroundColor = colors[p];
-
-
+                     Console.ForegroundColor = colors[p];
 
 
-                    Console.WriteLine(title[21]);
-                    
 
-                    p++;
-                    if (p > 3)
-                        p = 0;
 
-                    Thread.Sleep(1000);
-                }*/
+                     Console.WriteLine(title[21]);
+
+
+                     p++;
+                     if (p > 3)
+                         p = 0;
+
+                     Thread.Sleep(1000);
+                 }*/
 
                 key = Console.ReadKey(true).Key;
             }
@@ -398,7 +398,7 @@ namespace Symbolus
                         break;
                     case Screen.Inventory:
                         player.inventory.Display();
-                        break;                    
+                        break;
                     case Screen.ActionMenu:
                         basicActionMenu.Display();
                         break;
@@ -441,7 +441,7 @@ namespace Symbolus
 
         public Position() { }
 
-        public Position(int x, int y) 
+        public Position(int x, int y)
         {
             this.x = x;
             this.y = y;
@@ -452,7 +452,47 @@ namespace Symbolus
     {
         public string[] matrix = new string[40];
         public int maxY;
+        public int maxX;
+        public int[,] starts;
 
+        public void BasicMatrixBuilder(StreamReader r, ref int i)
+        {
+            string line = r.ReadLine();
+            starts = new int[40, line.Length];
+            maxX = line.Length;
 
+            while (!r.EndOfStream && line != "=")
+            {
+                matrix[i] = line;
+                CalcStart(line, i);
+                i++;
+                line = r.ReadLine();
+            }
+            if (line != "=")
+                matrix[i] = line;
+            maxY = i;
+        }
+
+        public void SkipSpace(int y, ref int x)
+        {
+            if (starts[y, x] != 0)
+            {
+                Console.SetCursorPosition(x += starts[y, x], y);
+            }
+        }
+
+        public void CalcStart(string line, int i)
+        {
+            int j = 0;
+            while (j < maxX)
+            {
+                int skips = 0;
+                while (j + skips < maxX && line[j + skips] == ' ') { skips++; }
+                if (skips > 0 && line[j] == ' ')
+                    j += starts[i, j] = skips;
+                else
+                    j++;
+            }
+        }
     }
 }

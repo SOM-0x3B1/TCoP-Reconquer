@@ -24,13 +24,17 @@ namespace Symbolus
         {
             menuPage.waveEngine.Stop();
             Console.Clear();
-            char c;
+            char c;            
 
             for (int j = 0; j <= menuPage.maxY; j++)
             {
-                for (int i = 0; i < menuPage.matrix[0].Length; i++)
+                for (int i = 0; i < menuPage.maxX; i++)
                 {
-                    c = menuPage.matrix[j][i];
+                    menuPage.SkipSpace(j, ref i);
+                    if (i < menuPage.maxX)
+                        c = menuPage.matrix[j][i];
+                    else
+                        break;
 
                     if (c == '#')
                     {
@@ -261,14 +265,7 @@ namespace Symbolus
             using (StreamReader r = new StreamReader(@"assets\menu\" + page + ".txt", Encoding.UTF8))
             {
                 int i = 0;
-                string line = r.ReadLine();
-
-                while (line[0] != '=')
-                {
-                    matrix[i] = line;
-                    i++;
-                    line = r.ReadLine();
-                }
+                BasicMatrixBuilder(r, ref i);
                 while (!r.EndOfStream)
                 {
                     maxY = i - 1;
@@ -297,12 +294,7 @@ namespace Symbolus
             using (StreamReader r = new StreamReader(@"assets\menu\win.txt", Encoding.UTF8))
             {
                 int i = 0;
-                while (!r.EndOfStream)
-                {
-                    matrix[i] = r.ReadLine();
-                    i++;
-                }
-                maxY = i - 1;
+                BasicMatrixBuilder(r, ref i);
             }
             waveEngine = new WaveEngine(matrix, maxY, maxY / 2);
         }
@@ -320,7 +312,7 @@ namespace Symbolus
         {
             waveEngine.Stop();
             Console.Clear();
-            char c;
+            char c;            
             for (int j = 0; j <= maxY; j++)
             {
                 for (int i = 0; i < matrix[0].Length; i++)

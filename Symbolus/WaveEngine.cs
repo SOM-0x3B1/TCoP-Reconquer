@@ -25,24 +25,24 @@ namespace Symbolus
         public Thread renderer;
 
 
-        public WaveEngine(string[] map, int pacing)
+        public WaveEngine(string[] matrix, int pacing)
         {
-            cells = new WaveCell[map.Length, map[0].Length];
-            height = map.Length;
-            BuildCells(map, pacing);
+            cells = new WaveCell[matrix.Length, matrix[0].Length];
+            height = matrix.Length;
+            BuildCells(matrix, pacing);
         }
-        public WaveEngine(string[] map, int maxY, int pacing)
+        public WaveEngine(string[] matrix, int maxY, int pacing)
         {
-            cells = new WaveCell[maxY + 1, map[0].Length];
+            cells = new WaveCell[maxY + 1, matrix[0].Length];
             height = maxY + 1;
-            BuildCells(map, pacing);
+            BuildCells(matrix, pacing);
         }
-        public WaveEngine(string[] map, int maxY, int pacing, int firstX)
+        public WaveEngine(string[] matrix, int maxY, int pacing, int firstX)
         {
-            cells = new WaveCell[maxY + 1, map[0].Length + firstX];
+            cells = new WaveCell[maxY + 1, matrix[0].Length + firstX];
             height = maxY + 1;
             this.firstX = firstX;
-            BuildCells(map, pacing);
+            BuildCells(matrix, pacing);
         }
 
         private void BuildCells(string[] map, int pacing)

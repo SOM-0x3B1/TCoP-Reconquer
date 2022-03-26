@@ -36,12 +36,7 @@ namespace Symbolus
             using (StreamReader r = new StreamReader(@"assets\shops\art.txt", Encoding.UTF8))
             {
                 int i = 0;
-                while (!r.EndOfStream)
-                {
-                    matrix[i] = r.ReadLine();
-                    i++;
-                }
-                maxY = i - 1;
+                BasicMatrixBuilder(r, ref i);
             }
 
             waveEngine = new WaveEngine(matrix, maxY, maxY / 2);
@@ -68,9 +63,14 @@ namespace Symbolus
                 else
                     description = null;
 
-                for (int i = 0; i < this.matrix[0].Length; i++)
+                for (int i = 0; i < this.maxX; i++)
                 {
-                    c = this.matrix[j][i];
+                    SkipSpace(j, ref i);
+                    if (i < maxX)
+                        c = matrix[j][i];
+                    else
+                        break;
+
                     if (c == '#')
                     {
                         Console.BackgroundColor = ConsoleColor.DarkGray;

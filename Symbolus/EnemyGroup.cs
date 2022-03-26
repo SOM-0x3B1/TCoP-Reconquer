@@ -327,7 +327,7 @@ namespace Symbolus
                     if (k == members.Count - 1)
                         ender = 0;
 
-                    for (int i = starter; i < background.matrix[0].Length + ender; i++)
+                    for (int i = starter; i < background.maxX + ender; i++)
                     {
                         if (m.sticker != null && j < m.sticker.maxY && m.sticker.matrix[j][i] != ' ')
                             c = m.sticker.matrix[j][i];
@@ -1173,16 +1173,9 @@ namespace Symbolus
 
             using (StreamReader r = new StreamReader(@"assets\enemies\" + type + ".txt")) //karakter (személy) rajzának betöltése
             {
-                string line = r.ReadLine();
                 int i = 0;
-                while (line != "=")
-                {
-                    matrix[i] = line;
-                    i++;
-                    line = r.ReadLine();
-                }
-                matrix[i] = line;
-                maxY = i - 1;
+                BasicMatrixBuilder(r, ref i);
+                maxY--;
             }
 
             switch (type)

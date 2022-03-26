@@ -112,11 +112,8 @@ namespace Symbolus
     }
 
 
-    public class ActionMenu
+    public class ActionMenu : Displayable
     {
-        protected string[] matrix = new string[40]; //karakter-rajz
-        protected int maxY; //matrix utolsó sora
-
         protected int cursorPos = 0; //"kurzor" veritkális pozíciója
         protected int firstListed = 0; //a kilistázás kezdete
 
@@ -136,15 +133,7 @@ namespace Symbolus
             using (StreamReader r = new StreamReader(@"assets\menu\action_menu.txt", Encoding.UTF8)) //grafika beolvasása
             {
                 int i = 0;
-                string line = "";
-
-                while (!r.EndOfStream)
-                {
-                    line = r.ReadLine();
-                    matrix[i] = line;
-                    i++;
-                }
-                maxY = i - 1;
+                BasicMatrixBuilder(r, ref i);
             }
         }
 
@@ -161,9 +150,14 @@ namespace Symbolus
 
             for (int j = 0; j <= this.maxY; j++)
             {
-                for (int i = 0; i < this.matrix[0].Length; i++)
+                for (int i = 0; i < this.maxX; i++)
                 {
-                    c = this.matrix[j][i];
+                    SkipSpace(j, ref i);
+                    if (i < maxX)
+                        c = matrix[j][i];
+                    else
+                        break;
+
                     if (c == '#')
                     {
                         Console.BackgroundColor = ConsoleColor.DarkGray;
@@ -412,7 +406,7 @@ namespace Symbolus
 
             for (int j = 0; j <= this.maxY; j++)
             {
-                for (int i = 0; i < this.matrix[0].Length; i++)
+                for (int i = 0; i < this.maxX; i++)
                 {
                     c = this.matrix[j][i];
                     if (c == '#')

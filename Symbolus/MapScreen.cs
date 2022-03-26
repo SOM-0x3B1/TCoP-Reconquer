@@ -117,7 +117,7 @@ namespace Symbolus
                     }
                     Console.BackgroundColor = ConsoleColor.Black;
                 }
-                for (int i = 0; i < map.matrix[0].Length; i++)
+                for (int i = 0; i < map.maxX; i++)
                 {
                     c = map.matrix[j][i];
                     switch (c)
