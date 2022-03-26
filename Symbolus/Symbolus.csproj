@@ -49,7 +49,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>mende.ico</ApplicationIcon>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>Symbolus.Program</StartupObject>
@@ -87,6 +87,8 @@
     <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="favicon.ico" />
+    <Content Include="icon.ico" />
     <Content Include="mende.ico" />
   </ItemGroup>
   <ItemGroup>
