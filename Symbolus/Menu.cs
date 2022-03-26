@@ -165,7 +165,7 @@ namespace Symbolus
                     this.cursorPos++;
                     Program.PlaySound("menumove");
                 }
-                else if (keyinfo.Key == ConsoleKey.Escape)
+                else if (keyinfo.Key == ConsoleKey.Escape && menuPage.name != "main")
                 {
                     Program.PlaySound("select");
                     Back();
