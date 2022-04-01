@@ -65,31 +65,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="WaveEngine.cs" />
-    <Compile Include="Graphical.cs" />
-    <Compile Include="Action.cs" />
-    <Compile Include="TextBox.cs" />
-    <Compile Include="Shop.cs" />
-    <Compile Include="SkillTree.cs" />
+    <Compile Include="Graphics\WaveEngine.cs" />
+    <Compile Include="Graphics\Graphical.cs" />
+    <Compile Include="Menu\Action.cs" />
+    <Compile Include="Graphics\TextBox.cs" />
+    <Compile Include="Menu\Shop.cs" />
+    <Compile Include="Menu\SkillTree.cs" />
     <Compile Include="EnemyGroup.cs" />
-    <Compile Include="MobileObject.cs" />
-    <Compile Include="Inventory.cs" />
-    <Compile Include="Equipment.cs" />
-    <Compile Include="Map.cs" />
+    <Compile Include="BaseClasses\MobileObject.cs" />
+    <Compile Include="Menu\Inventory.cs" />
+    <Compile Include="BaseClasses\Equipment.cs" />
+    <Compile Include="BaseClasses\Map.cs" />
     <Compile Include="NPC.cs" />
     <Compile Include="MapScreen.cs" />
-    <Compile Include="Menu.cs" />
+    <Compile Include="Menu\Menu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
-    <Content Include="icon.ico" />
-    <Content Include="mende.ico" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
@@ -106,5 +103,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
