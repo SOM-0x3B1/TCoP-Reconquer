@@ -62,7 +62,6 @@ using System.Runtime.InteropServices;
 ///     - Potionok árának kiírása
 ///     - 1 körös effektek listájának eltűnése
 ///     - random sebzés
-///     - hullámzó búza és víz
 ///     
 /// </summary>
 
