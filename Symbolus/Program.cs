@@ -85,7 +85,7 @@ namespace Symbolus
         public static Random rnd = new Random();
         public static int width = 120;
         //alap
-        public static string[] settings;
+        public static Dictionary<string,string> settings = new Dictionary<string, string>();
         public static string assetPath = "HU";
         public static Player player = new Player(10, 2); //mobilis objektum (pozícióval rendelkezik)
         public static MapScreen mapScreen = new MapScreen(); //kezelőfelület (térkép + mobilis objektumok)
@@ -187,12 +187,12 @@ namespace Symbolus
             //Console.ReadLine();
 
             #region Előkészületek
-            
-            settings = File.ReadAllLines(@"settings.txt", Encoding.UTF8);
+
+            string[] rawSettings = File.ReadAllLines(@"settings.txt", Encoding.UTF8);
             string[] param;
-            for (int i = 0; i<settings.Length; i++)
+            for (int i = 0; i<rawSettings.Length; i++)
             {
-                param = settings[i].Split('=');
+                param = rawSettings[i].Split('=');
                 switch (param[0])
                 {
                     case "language":
@@ -205,6 +205,7 @@ namespace Symbolus
                         soundOn = bool.Parse(param[1]);
                         break;
                 }
+                settings.Add(param[0],param[1]);
             }
             
             //Cím betöltése

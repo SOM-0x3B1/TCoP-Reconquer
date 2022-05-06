@@ -366,3 +366,4 @@ FodyWeavers.xsd
 *.exe
 /planning
 /res
+settings.txt

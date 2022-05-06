@@ -190,8 +190,12 @@ namespace Symbolus
                         Program.nextDisplayed = Program.Screen.Map;
                         break;
                     case "quit":
-                        if (Program.settings.Length > 0)
-                            File.WriteAllLines(@"settings.txt", Program.settings, Encoding.UTF8);
+                        if (Program.settings.Count > 0)
+                        {
+                            using (StreamWriter w = new StreamWriter(@"settings.txt"))
+                                foreach (KeyValuePair<string, string> item in Program.settings)
+                                    w.WriteLine($"{item.Key}={item.Value}");
+                        }
                         Thread.Sleep(200);
                         Environment.Exit(0);
                         break;
@@ -205,11 +209,7 @@ namespace Symbolus
                         break;
                     case "music":
                         Program.musicOn = !Program.musicOn;
-                        for (int i = 0; i < Program.settings.Length; i++)
-                        {
-                            if (Program.settings[i].StartsWith("music"))
-                                Program.settings[i] = "music=" + Program.musicOn.ToString().ToLower();
-                        }
+                        Program.settings["music"] = Program.musicOn.ToString().ToLower();
                         if (!Program.newGame || Program.combat)
                         {
                             if (Program.musicOn)
@@ -223,15 +223,11 @@ namespace Symbolus
                                 Program.musics["confusion"].PlayLooping();
                             else
                                 Program.musics["confusion"].Stop();
-                        }                
+                        }
                         break;
                     case "sound":
                         Program.soundOn = !Program.soundOn;
-                        for (int i = 0; i < Program.settings.Length; i++)
-                        {
-                            if (Program.settings[i].StartsWith("sound"))
-                                Program.settings[i] = "sound=" + Program.soundOn.ToString().ToLower();
-                        }
+                        Program.settings["sound"] = Program.soundOn.ToString().ToLower();
                         Program.PlaySound("select", true);
                         break;
                     case "retry":
@@ -243,14 +239,14 @@ namespace Symbolus
                         {
                             Program.cEnemy.members[i].Reset();
                         }
-                        if(Program.musicOn)
+                        if (Program.musicOn)
                         {
                             Program.musics[Program.cmusic].Stop();
                             Program.musics["fight"].PlayLooping();
                         }
                         Program.nextDisplayed = Program.Screen.Combat;
                         break;
-                }                
+                }          
             }            
         }
     }
