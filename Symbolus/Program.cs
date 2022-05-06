@@ -62,6 +62,11 @@ using System.Runtime.InteropServices;
 ///     - Potionok árának kiírása
 ///     - 1 körös effektek listájának eltűnése
 ///     - random sebzés
+///     - progress is broken
+///     - abilities maction menu is broken
+///     - add external dialoge jumps
+///     - enemy doesn't load dead sprite after retry
+///     - shield/armor?
 ///     
 /// </summary>
 
@@ -80,6 +85,8 @@ namespace Symbolus
         public static Random rnd = new Random();
         public static int width = 120;
         //alap
+        public static string[] settings;
+        public static string assetPath = "HU";
         public static Player player = new Player(10, 2); //mobilis objektum (pozícióval rendelkezik)
         public static MapScreen mapScreen = new MapScreen(); //kezelőfelület (térkép + mobilis objektumok)
         public static Menu menu = new Menu(); //kezelőfelület (gombok)
@@ -140,6 +147,7 @@ namespace Symbolus
             catch { }
         }
 
+        #region indk2
         /*public static ConsoleKey ReadInput()
         {
             ConsoleKey key;
@@ -167,6 +175,7 @@ namespace Symbolus
 
             return key;
         }*/
+        #endregion
 
 
         static void Main(string[] args)
@@ -178,6 +187,26 @@ namespace Symbolus
             //Console.ReadLine();
 
             #region Előkészületek
+            
+            settings = File.ReadAllLines(@"settings.txt", Encoding.UTF8);
+            string[] param;
+            for (int i = 0; i<settings.Length; i++)
+            {
+                param = settings[i].Split('=');
+                switch (param[0])
+                {
+                    case "language":
+                        assetPath = param[1];
+                        break;
+                    case "music":
+                        musicOn = bool.Parse(param[1]);
+                        break;
+                    case "sound":
+                        soundOn = bool.Parse(param[1]);
+                        break;
+                }
+            }
+            
             //Cím betöltése
             using (StreamReader r = new StreamReader(@"assets\title.txt", Encoding.UTF8))
             {
@@ -349,6 +378,7 @@ namespace Symbolus
                     key = Console.ReadKey(true).Key;
                 key = Console.ReadKey(true).Key;
 
+                #region idk
                 /* while (!Console.KeyAvailable)
                  {
                      Console.SetCursorPosition(0, 21);
@@ -367,6 +397,7 @@ namespace Symbolus
 
                      Thread.Sleep(1000);
                  }*/
+                #endregion
 
                 key = Console.ReadKey(true).Key;
             }
@@ -421,10 +452,10 @@ namespace Symbolus
     public class Tutorial
     {
         public static List<List<TextBox>> listOfTextBoxes = new List<List<TextBox>>();
-        public static int progress = 9;
+        public static int progress = 0;
         public static int textBoxIndex = 0;
         public static bool completed = false;
-        public static bool disabled = false;
+        //public static bool disabled = true;
 
         public static void Next()
         {
@@ -475,9 +506,7 @@ namespace Symbolus
         public void SkipSpace(int y, ref int x)
         {
             if (starts[y, x] != 0)
-            {
                 Console.SetCursorPosition(x += starts[y, x], y);
-            }
         }
 
         public void CalcStart(string line, int i)

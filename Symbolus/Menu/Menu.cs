@@ -190,6 +190,8 @@ namespace Symbolus
                         Program.nextDisplayed = Program.Screen.Map;
                         break;
                     case "quit":
+                        if (Program.settings.Length > 0)
+                            File.WriteAllLines(@"settings.txt", Program.settings, Encoding.UTF8);
                         Thread.Sleep(200);
                         Environment.Exit(0);
                         break;
@@ -203,6 +205,11 @@ namespace Symbolus
                         break;
                     case "music":
                         Program.musicOn = !Program.musicOn;
+                        for (int i = 0; i < Program.settings.Length; i++)
+                        {
+                            if (Program.settings[i].StartsWith("music"))
+                                Program.settings[i] = "music=" + Program.musicOn.ToString().ToLower();
+                        }
                         if (!Program.newGame || Program.combat)
                         {
                             if (Program.musicOn)
@@ -220,6 +227,11 @@ namespace Symbolus
                         break;
                     case "sound":
                         Program.soundOn = !Program.soundOn;
+                        for (int i = 0; i < Program.settings.Length; i++)
+                        {
+                            if (Program.settings[i].StartsWith("sound"))
+                                Program.settings[i] = "sound=" + Program.soundOn.ToString().ToLower();
+                        }
                         Program.PlaySound("select", true);
                         break;
                     case "retry":
