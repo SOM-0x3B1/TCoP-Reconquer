@@ -116,6 +116,7 @@ namespace Symbolus
     {
         protected int cursorPos = 0; //"kurzor" veritkális pozíciója
         protected int firstListed = 0; //a kilistázás kezdete
+        protected WaveEngine waveEngine;
 
         protected TextBox description = new TextBox();        
     }
@@ -135,6 +136,7 @@ namespace Symbolus
                 int i = 0;
                 BasicMatrixBuilder(r, ref i);
             }
+            waveEngine = new WaveEngine(matrix, maxY, maxY / 2);
         }
 
         /// <summary>
@@ -142,6 +144,7 @@ namespace Symbolus
         /// </summary>
         public void Display()
         {
+            waveEngine.Stop();
             Console.Clear();
             char c;
             int listed = 0;
@@ -292,6 +295,7 @@ namespace Symbolus
         /// </summary>
         protected void Controls()
         {
+            waveEngine.Start();
             ConsoleKeyInfo keyinfo;
             while (Console.KeyAvailable)
             {
@@ -340,6 +344,7 @@ namespace Symbolus
                 else if (keyinfo.Key == ConsoleKey.Escape)
                 {
                     Program.PlaySound("inv2");
+                    waveEngine.Stop();
                     Program.nextDisplayed = Program.Screen.Combat;
                     cursorPos = 0;
                 }
@@ -363,7 +368,9 @@ namespace Symbolus
                 else
                     Program.cEnemy.actions.Add(new BasicAction(selectedType, Program.cEnemy.selectedMember));
 
+                waveEngine.Stop();
                 Program.nextDisplayed = Program.Screen.Combat;
+
                 cursorPos = 0;
             }
         }

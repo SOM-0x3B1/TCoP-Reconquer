@@ -62,11 +62,15 @@ using System.Runtime.InteropServices;
 ///     - Potionok árának kiírása
 ///     - 1 körös effektek listájának eltűnése
 ///     - random sebzés
+///     - pajzs
 ///     - progress is broken
 ///     - abilities maction menu is broken
 ///     - add external dialoge jumps
 ///     - enemy doesn't load dead sprite after retry
 ///     - shield/armor?
+///     - rewrite enemy ai
+///     - add wave effect to actionmenu
+///     - remaster npc dialoge
 ///     
 /// </summary>
 
