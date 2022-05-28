@@ -56,7 +56,6 @@ using System.Runtime.InteropServices;
 ///         - 1-6 ==> alap cselekedetek shotrcutjai
 ///         
 /// Hiányosságok:
-///     - K.O. után fura effekt-clear
 ///     - Ellenfél ütközési sorrend
 ///     - Ellenfél képességei
 ///     - Potionok árának kiírása
@@ -66,7 +65,6 @@ using System.Runtime.InteropServices;
 ///     - progress
 ///     - abilities maction menu is broken
 ///     - add external dialoge jumps
-///     - enemy doesn't load dead sprite after retry
 ///     - shield/armor?
 ///     
 /// </summary>

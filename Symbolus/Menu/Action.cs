@@ -385,15 +385,7 @@ namespace Symbolus
             using (StreamReader r = new StreamReader(@"assets\menu\skill_menu.txt", Encoding.UTF8)) //grafika beolvasása
             {
                 int i = 0;
-                string line = "";
-
-                while (!r.EndOfStream)
-                {
-                    line = r.ReadLine();
-                    matrix[i] = line;
-                    i++;
-                }
-                maxY = i - 1;
+                BasicMatrixBuilder(r, ref i);
             }
         }
 
