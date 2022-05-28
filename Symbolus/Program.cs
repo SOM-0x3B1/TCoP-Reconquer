@@ -68,9 +68,6 @@ using System.Runtime.InteropServices;
 ///     - add external dialoge jumps
 ///     - enemy doesn't load dead sprite after retry
 ///     - shield/armor?
-///     - rewrite enemy ai
-///     - add wave effect to actionmenu
-///     - remaster npc dialoge
 ///     
 /// </summary>
 
