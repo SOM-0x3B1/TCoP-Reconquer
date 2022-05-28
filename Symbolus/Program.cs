@@ -62,11 +62,15 @@ using System.Runtime.InteropServices;
 ///     - Potionok árának kiírása
 ///     - 1 körös effektek listájának eltűnése
 ///     - random sebzés
-///     - progress is broken
+///     - pajzs
+///     - progress
 ///     - abilities maction menu is broken
 ///     - add external dialoge jumps
 ///     - enemy doesn't load dead sprite after retry
 ///     - shield/armor?
+///     - rewrite enemy ai
+///     - add wave effect to actionmenu
+///     - remaster npc dialoge
 ///     
 /// </summary>
 
@@ -453,7 +457,7 @@ namespace Symbolus
     public class Tutorial
     {
         public static List<List<TextBox>> listOfTextBoxes = new List<List<TextBox>>();
-        public static int progress = 0;
+        public static int progress = 4;
         public static int textBoxIndex = 0;
         public static bool completed = false;
         //public static bool disabled = true;

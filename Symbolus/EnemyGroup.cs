@@ -76,7 +76,7 @@ namespace Symbolus
             }
 
             if (type[0] >= '0' && type[0] <= '9')
-                this.XP = count * Convert.ToInt32(type);
+                this.XP = count * int.Parse(type);
             else
             {
                 if (this.type == "pityu_bacsi")
@@ -206,10 +206,10 @@ namespace Symbolus
                             switch (effect.type)
                             {
                                 case "fire":
-                                    DealDamage(member, Convert.ToInt32(Math.Round((double)Program.player.inventory.equippedWeapon.baseDamage / 2)));
+                                    DealDamage(member, (int)(Math.Round((double)Program.player.inventory.equippedWeapon.baseDamage / 2)));
                                     break;
                                 case "poison":
-                                    DealDamage(member, Convert.ToInt32(Math.Round((double)Program.player.inventory.equippedWeapon.baseDamage / 4)));
+                                    DealDamage(member, (int)(Math.Round((double)Program.player.inventory.equippedWeapon.baseDamage / 4)));
                                     break;
                             }
                             if (effect.type != "stun")
@@ -857,11 +857,11 @@ namespace Symbolus
             switch (action.type)
             {
                 case "fast_attack":
-                    DealDamage(member, Convert.ToInt32(baseDamage + (double)Program.rnd.Next(-10, 11) / 100 * baseDamage));
+                    DealDamage(member, (int)(baseDamage + (double)Program.rnd.Next(-10, 11) / 100 * baseDamage));
                     break;
                 case "heavy_attack":
                     double dhit = baseDamage * 2.3;
-                    DealDamage(member, Convert.ToInt32(dhit + (double)Program.rnd.Next(-5, 6) / 100 * dhit));
+                    DealDamage(member, (int)(dhit + (double)Program.rnd.Next(-5, 6) / 100 * dhit));
                     break;
                 case "heal":
                     if (Program.player.HP < Program.player.MaxHP)
@@ -992,13 +992,13 @@ namespace Symbolus
         {
             int damage;
 
-            int defenseProbability = 100 - Convert.ToInt32(Math.Round((double)member.HP / member.maxHP * 100));
+            int defenseProbability = 100 - (int)(Math.Round((double)member.HP / member.maxHP * 100));
 
             if (!member.effects.Any(a => a.type == "stun"))
             {
                 if (Program.rnd.Next(0, 200) > defenseProbability)
                 {                    
-                    damage = Convert.ToInt32(member.baseDamage - Program.player.inventory.equippedArmor.protection * Program.player.defenseModifier);
+                    damage = (int)(member.baseDamage - Program.player.inventory.equippedArmor.protection * Program.player.defenseModifier);
                     member.sticker = Sticker.GetVariableSticker("sword", damage.ToString());
 
                     if (Program.rnd.Next(0, 101) > Program.player.defMissProbability && damage > 0)
@@ -1073,9 +1073,7 @@ namespace Symbolus
             }
 
             if (skill.damage != 0)
-            {
-                DealDamage(member, Convert.ToInt32((double)skill.damage / 100 * Program.player.inventory.equippedWeapon.baseDamage));    
-            }
+                DealDamage(member, (int)((double)skill.damage / 100 * Program.player.inventory.equippedWeapon.baseDamage));    
         }
 
 
@@ -1222,7 +1220,7 @@ namespace Symbolus
         public void KnockOut()
         {
             this.KO = true;
-            this.matrix = Program.koEnemy;
+            Program.koEnemy.CopyTo(this.matrix, 0);
             this.effects.Clear();
         }
 
@@ -1246,16 +1244,9 @@ namespace Symbolus
         {
             using (StreamReader r = new StreamReader(@"assets\enemies\" + type + ".txt")) //karakter (személy) rajzának betöltése
             {
-                string line = r.ReadLine();
                 int i = 0;
-                while (line != "=")
-                {
-                    matrix[i] = line;
-                    i++;
-                    line = r.ReadLine();
-                }
-                matrix[i] = line;
-                maxY = i - 1;
+                BasicMatrixBuilder(r, ref i);
+                maxY--;
             }
 
             effects.Clear();
