@@ -3,7 +3,7 @@
                             ~fff ###############################   44444444444     fff~
                             ~fff #          Eszköztár          #   4 Vissza  4     fff~
                             ~fff #11111111122222222223333333333#   44444444444     fff~
-                            ~fff #1Fegyver12 Páncél 23Főzetek 3#                   fff~
+                            ~fff #1Fegyver12 Páncél 23Tárgyak 3#                   fff~
                             ~fff #11111111122222222223333333333################### fff~
                             ~fff #                             #  Felszerelve:   # fff~
                             ~fff #   -                         ################### fff~

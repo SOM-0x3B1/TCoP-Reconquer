@@ -4,19 +4,19 @@
                                     ~fff #             Bolt            # fff~
                                     ~fff ############################### fff~
                                     ~fff #                             # fff~
-                                    ~fff #   -                         # fff~
+                                    ~fff # -                           # fff~
                                     ~fff #                             # fff~
-                                    ~fff #   -                         # fff~
+                                    ~fff # -                           # fff~
                                     ~fff #                             # fff~
-                                    ~fff #   -                         # fff~
+                                    ~fff # -                           # fff~
                                     ~fff #                             # fff~
-                                    ~fff #   -                         # fff~
+                                    ~fff # -                           # fff~
                                     ~fff #                             # fff~
-                                    ~fff #   -                         # fff~
+                                    ~fff # -                           # fff~
                                     ~fff #                             # fff~
-                                    ~fff #   -                         # fff~
+                                    ~fff # -                           # fff~
                                     ~fff #                             # fff~
-                                    ~fff #   -                         # fff~
+                                    ~fff # -                           # fff~
                                     ~fff #                             # fff~
                                     ~fff ############################### fff~
                                     ~fff                                 fff~

@@ -58,12 +58,10 @@ using System.Runtime.InteropServices;
 /// Hiányosságok:
 ///     - Ellenfél ütközési sorrend
 ///     - Ellenfél képességei
-///     - Potionok árának kiírása
 ///     - 1 körös effektek listájának eltűnése
 ///     - random sebzés
 ///     - pajzs
 ///     - progress
-///     - abilities maction menu is broken
 ///     - add external dialoge jumps
 ///     - shield/armor?
 ///     
@@ -123,8 +121,6 @@ namespace Symbolus
         /// Hangok (nem zenék) lejátszása
         /// </summary>
         /// <param name="sound">A .wav fájl neve</param>
-
-
         public static void PlaySound(string sound)
         {
             if (soundOn)
@@ -452,7 +448,7 @@ namespace Symbolus
     public class Tutorial
     {
         public static List<List<TextBox>> listOfTextBoxes = new List<List<TextBox>>();
-        public static int progress = 4;
+        public static int progress = 9;
         public static int textBoxIndex = 0;
         public static bool completed = false;
         //public static bool disabled = true;

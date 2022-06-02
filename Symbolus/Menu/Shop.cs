@@ -100,8 +100,6 @@ namespace Symbolus
                             Console.BackgroundColor = ConsoleColor.Black;
                             Console.ForegroundColor = ConsoleColor.White;
                             if ((index + 1).ToString().Length < 2)
-                                Console.Write("  ");
-                            else
                                 Console.Write(" ");
                         }
                         else
@@ -112,20 +110,19 @@ namespace Symbolus
 
                         c = ' ';
                         if (type == "weapon" && (index < goods.Count))
-                            WriteListItemLevel(goods[index].weapon, 18, false, goods[index].weapon.level);
+                            WriteListItemLevel(goods[index].weapon, 19, false, goods[index].weapon.level);
                         else if (type == "armor" && (firstListed + listed < goods.Count()))
-                            WriteListItem(goods[index].armor, 18, false);
+                            WriteListItem(goods[index].armor, 19, false);
                         else if (type == "potion" && (firstListed + listed < goods.Count()))
                         {
                             string name = goods[index].potion.name;
                             Console.Write(name);
-                            string quantity = " [0]";
+                            string additions = " [0]";
                             if (Program.player.inventory.potions.ContainsKey(name))
-                            {
-                                quantity = " [" + Program.player.inventory.potions.First(a => a.Key == name).Value.count.ToString() + "]";
-                            }
-                            Console.Write(quantity);
-                            i += goods[index].potion.name.Length + 3 + quantity.Length;
+                                additions = " [" + Program.player.inventory.potions[name].count.ToString() + "]";
+                            additions += $" {goods[index].potion.cost}Ft";
+                            Console.Write(additions);
+                            i += goods[index].potion.name.Length + 2 + additions.Length;
                         }
                         else
                         {
