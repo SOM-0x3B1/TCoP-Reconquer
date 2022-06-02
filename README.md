@@ -22,7 +22,7 @@ The final moments (or hours) of the game depends on the player's actions.
 - [1/4] The Traitor
 - [0/4] ???<br>
 
-EN: *"Do not forget, do not become the very thing you swore to destroy."*<br>
+EN: *"Remember, do not become the very thing you swore to destroy."*<br>
 HU: *"Ne feledd, ne válj azzá, amit el kell pusztítanod!"*
 
 ## Info
