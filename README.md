@@ -25,18 +25,20 @@ The final moments (or hours) of the game depends on the player's actions.
 EN: *"Remember, do not become the very thing you swore to destroy."*<br>
 HU: *"Ne feledd, ne válj azzá, amit el kell pusztítanod!"*
 
+<img align="right" src="https://www.onekilobit.eu/media/uploads/TCoP-logo.png">
+
 ## Info
 
-#### System requirements
-- Windows 10+
+### System requirements
+- Windows 10+</li>
 - An unmodified Command Prompt
 
-#### Languages
-- English
+
+### Language support
 - Hungarian
 
 
-## Controls
+### Controls
 
 **Keys**|**Actions**
 :-----:|:-----:
@@ -49,4 +51,4 @@ T|open/close skilltree
 TAB|switch between enemies
 1-6|shortcuts to combat actions
 
-![Title Screen](https://www.onekilobit.eu/media/uploads/Screenshot_2021-06-12_193732.png) ![Title Screen](https://www.onekilobit.eu/media/uploads/Screenshot_2021-06-12_193448.png)
+![Screencap1](https://www.onekilobit.eu/media/uploads/Screenshot_2021-06-12_193732.png) ![Screencap2](https://www.onekilobit.eu/media/uploads/Screenshot_2021-06-12_193448.png)
