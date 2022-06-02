@@ -60,7 +60,6 @@ using System.Runtime.InteropServices;
 ///     - Ellenfél képességei
 ///     - 1 körös effektek listájának eltűnése
 ///     - random sebzés
-///     - pajzs
 ///     - progress
 ///     - add external dialoge jumps
 ///     - shield/armor?
@@ -331,20 +330,20 @@ namespace Symbolus
             #endregion
 
             #region Teszt
-            /*//Eszköztár feltöltése (kíséleti)
+            //Eszköztár feltöltése (kíséleti)
             #region Feltöltés
-            player.inventory.weapons.Add(new Weapon("Bot", "normal", 5, "Mindenhol ott van. Mindenre használható. Midnenki szereti."));
-            player.inventory.weapons.Add(new Weapon("Seprű", "good", 10, "Ha macskák ellen beválik, a suttyók ellen miért ne működne?"));            
-            player.inventory.weapons.Add(new Weapon("Csúzli", "rare", 30, "Lufikról gyakran lepattan. Suttyókról soha."));
-            player.inventory.weapons.Add(new Weapon("Farönk", "epic", 70, "A bot szteroidos nagybátyja. Multifunkcionális."));
-            player.inventory.weapons.Add(new Weapon("Fűnyíró", "legendary", 100, "Két halálos penge. 3000 rpm. A tökéletes eszköz a suttyótlanításra."));
+            player.inventory.weapons.Add(new Weapon("Bot", "normal", 5, "Mindenhol ott van. Mindenre használható. Midnenki szereti.", 0));
+            player.inventory.weapons.Add(new Weapon("Seprű", "good", 10, "Ha macskák ellen beválik, a suttyók ellen miért ne működne?", 0));            
+            player.inventory.weapons.Add(new Weapon("Csúzli", "rare", 30, "Lufikról gyakran lepattan. Suttyókról soha.", 0));
+            player.inventory.weapons.Add(new Weapon("Farönk", "epic", 70, "A bot szteroidos nagybátyja. Multifunkcionális.", 0));
+            player.inventory.weapons.Add(new Weapon("Fűnyíró", "legendary", 100, "Két halálos penge. 3000 rpm. A tökéletes eszköz a suttyótlanításra.", 0));
 
-            player.inventory.armors.Add(new Armor("Pulóver", "normal", 10, "Talán a meggymagok lepatannak róla."));
-            player.inventory.armors.Add(new Armor("Farönk", "rare", 20, "Mondtam, hogy multifunkcionális ;)."));
+            player.inventory.armors.Add(new Armor("Pulóver", "normal", 2, "Talán a meggymagok lepatannak róla.", 0));
+            player.inventory.armors.Add(new Armor("Farönk", "rare", 20, "Mondtam, hogy multifunkcionális ;).", 0));
 
             player.inventory.potions.Add("Paprikapálinka", new Potion("Paprikapálinka", "Felfrissít.", "stamina1", 1, 50));
             player.inventory.potions.Add("Gyógyfű", new Potion("Gyógyfű", "Biztos segít...", "heal1", 1, 30));
-            #endregion*/
+            #endregion
             #endregion
 
 
@@ -448,7 +447,7 @@ namespace Symbolus
     public class Tutorial
     {
         public static List<List<TextBox>> listOfTextBoxes = new List<List<TextBox>>();
-        public static int progress = 9;
+        public static int progress = 0;
         public static int textBoxIndex = 0;
         public static bool completed = false;
         //public static bool disabled = true;

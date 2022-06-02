@@ -857,11 +857,11 @@ namespace Symbolus
             switch (action.type)
             {
                 case "fast_attack":
-                    DealDamage(member, (int)(baseDamage + (double)Program.rnd.Next(-10, 11) / 100 * baseDamage));
+                    DealDamage(member, (int)Math.Round(baseDamage + (double)Program.rnd.Next(-20, 20) / 100 * baseDamage));
                     break;
                 case "heavy_attack":
                     double dhit = baseDamage * 2.3;
-                    DealDamage(member, (int)(dhit + (double)Program.rnd.Next(-5, 6) / 100 * dhit));
+                    DealDamage(member, (int)Math.Round(dhit + (double)Program.rnd.Next(-10, 10) / 100 * dhit));
                     break;
                 case "heal":
                     if (Program.player.HP < Program.player.MaxHP)
@@ -997,8 +997,10 @@ namespace Symbolus
             if (!member.effects.Any(a => a.type == "stun"))
             {
                 if (Program.rnd.Next(0, 200) > defenseProbability)
-                {                    
-                    damage = (int)(member.baseDamage - Program.player.inventory.equippedArmor.protection * Program.player.defenseModifier);
+                {
+                    damage = (int)Math.Round(member.baseDamage + ((double)Program.rnd.Next(-20, 10) / 100) * member.baseDamage);
+                    damage = (int)Math.Round(damage - Program.player.inventory.equippedArmor.protection * Program.player.defenseModifier);                    
+
                     member.sticker = Sticker.GetVariableSticker("sword", damage.ToString());
 
                     if (Program.rnd.Next(0, 101) > Program.player.defMissProbability && damage > 0)
