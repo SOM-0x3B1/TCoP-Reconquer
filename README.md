@@ -8,7 +8,7 @@ Full name: **The Chronicles of Pusztaszentistván - Reconquer**
 
 ## Story
 
-The game takes place after the hostile peasants of a nearby town called *"suttyó"-s* attacked and overran Pusztaszentistván.<br>After starting the game the player finds themself in front of the house of my, the Creator's house.
+The game takes place after the hostile peasants (called *"suttyó"-s*) of a nearby town attacked and overran Pusztaszentistván.<br>After starting the game the player finds themself in front of the house of my, the Creator's house.
 Since the village is full of suttyó-s, the player must find a way to reconquer the territory. In order to succeed, they must obtain stronger equipment, trade with local villagers, and gain experience to ulock special weapons and powerful abilities.<br>
 *The end of this story is now in your hands. Will you bring salvation or demise upon these damned souls?*
 
