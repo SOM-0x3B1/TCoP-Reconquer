@@ -35,37 +35,34 @@ namespace Symbolus
                 int i = 0;
                 BasicMatrixBuilder(r, ref i);
 
-                string type = "";
+                string[] entry;
+                string[] p;
                 string line = r.ReadLine();
 
                 while (line != "=") //mobilis (pozícióval rendelkező) objektumok betöltése
                 {
-                    type = line.Split(':')[0];
-                    string[] parameters;
-                    switch (type)
+                    entry = line.Split(':');
+                    p = entry[1].Split(';');
+                    switch (entry[0])
                     {
                         case "e":
-                            parameters = line.Split(':')[1].Split(';');
-                            enemies.Add(new EnemyGroup(int.Parse(parameters[0]), int.Parse(parameters[1]), parameters[2], int.Parse(parameters[3]), parameters[4], int.Parse(parameters[5])));
+                            enemies.Add(new EnemyGroup(int.Parse(p[0].Split(',')[0]), int.Parse(p[0].Split(',')[1]), p[1], int.Parse(p[2]), p[3], int.Parse(p[4])));
                             break;
                         case "p":
-                            Program.player.x = int.Parse(line.Split(':')[1].Split(',')[0]);
-                            Program.player.y = int.Parse(line.Split(':')[1].Split(',')[1]);
+                            Program.player.x = int.Parse(p[0].Split(',')[0]);
+                            Program.player.y = int.Parse(p[0].Split(',')[1]);
                             break;
                         case "d":
-                            darkness = int.Parse(line.Split(':')[1]);
+                            darkness = int.Parse(p[0]);
                             break;
-                        case "g":
-                            string input = line.Split(':')[1];
-                            parameters = input.Split(';');
-                            gates.Add(new Gate(parameters[0].Split(','), parameters[1], parameters[2], parameters[3].Split(',')));
+                        case "g":                           
+                            gates.Add(new Gate(p[0].Split(','), p[1], p[2], p[3].Split(',')));
                             break;
                         case "m":
-                            music = line.Split(':')[1];
+                            music = p[0];
                             break;
                         case "n":
-                            parameters = line.Split(':')[1].Split(',');
-                            npcs.Add(new NPC(parameters[0], int.Parse(parameters[1]), int.Parse(parameters[2]), int.Parse(parameters[3])));
+                            npcs.Add(new NPC(p[0], int.Parse(p[1].Split(',')[0]), int.Parse(p[1].Split(',')[1]), int.Parse(p[2])));
                             break;
                     }
                     line = r.ReadLine();
