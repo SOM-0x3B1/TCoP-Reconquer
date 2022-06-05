@@ -187,7 +187,7 @@ namespace Symbolus
                         Thread.Sleep(50);
                 }
                 lastAction = "";
-                
+
 
                 if (!this.defeated)
                 {
@@ -266,28 +266,13 @@ namespace Symbolus
                         Program.player.Die();
 
                     selectedMember = lastSelectedMember;
+
+                    if(this.defeated)
+                        Win();
                 }
                 else
-                {
-                    Program.mapScreen.map.enemies.Remove(this);
-                    Program.nextDisplayed = Program.Screen.WinScreen;
-                    Program.combat = false;
+                    Win();
 
-                    if (Tutorial.progress == 2)
-                        Tutorial.Next();
-
-                    if (Program.musicOn)
-                        Program.musics[Program.cmusic].Stop();
-
-                    Thread.Sleep(300);
-
-                    if (Program.musicOn)
-                    {
-                        Program.cmusic = "win";
-                        Program.musics["win"].Play();
-                    }
-                    Program.winScreen.Display(XP, XP * (hits - summedDamage), hits, summedDamage);
-                }
                 actions.Clear();
                 turns = false;
             }
@@ -358,10 +343,15 @@ namespace Symbolus
                                         Console.BackgroundColor = ConsoleColor.DarkGray;
                                         Console.ForegroundColor = ConsoleColor.DarkGray;
                                     }
+                                    else if (lastAction == "equipment")
+                                    {
+                                        Console.BackgroundColor = ConsoleColor.DarkGray;
+                                        Console.ForegroundColor = ConsoleColor.DarkGray;
+                                    }
                                     else
                                     {
-                                        Console.BackgroundColor = ConsoleColor.Magenta;
-                                        Console.ForegroundColor = ConsoleColor.Magenta;
+                                        Console.BackgroundColor = ConsoleColor.DarkYellow;
+                                        Console.ForegroundColor = ConsoleColor.DarkYellow;
                                     }
                                 }
                                 else
@@ -629,6 +619,11 @@ namespace Symbolus
                                 Console.BackgroundColor = ConsoleColor.Gray;
                                 Console.ForegroundColor = ConsoleColor.Gray;
                             }
+                            else if (actions[x].type == "equipment")
+                            {
+                                Console.BackgroundColor = ConsoleColor.DarkYellow;
+                                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                            }
                             else
                             {
                                 Console.BackgroundColor = ConsoleColor.Magenta;
@@ -750,9 +745,9 @@ namespace Symbolus
                         Program.nextDisplayed = Program.Screen.Inventory;
                     }
                     else if (keyinfo.KeyChar >= '1' && keyinfo.KeyChar <= '6')
-                    {
                         BasicActionMenu.AddViaShortcut(keyinfo.KeyChar);
-                    }
+                    else if(keyinfo.KeyChar >= '0')
+                        BasicActionMenu.AddViaShortcut('6');
                 }
                 else
                 {
@@ -819,6 +814,27 @@ namespace Symbolus
             #endregion
         }
 
+        private void Win()
+        {
+            Program.mapScreen.map.enemies.Remove(this);
+            Program.nextDisplayed = Program.Screen.WinScreen;
+            Program.combat = false;
+
+            if (Tutorial.progress == 2)
+                Tutorial.Next();
+
+            if (Program.musicOn)
+                Program.musics[Program.cmusic].Stop();
+
+            Thread.Sleep(300);
+
+            if (Program.musicOn)
+            {
+                Program.cmusic = "win";
+                Program.musics["win"].Play();
+            }
+            Program.winScreen.Display(XP, XP * (hits - summedDamage), hits, summedDamage);
+        }
 
         /// <summary>
         /// Ki van-e ütve (0 HP) az ellefél
@@ -909,6 +925,9 @@ namespace Symbolus
                     break;
                 case "skip":
                     Program.player.AddStamina(5);
+                    break;
+                case "equipment":
+                    Program.player.AddStamina(2);
                     break;
                 default:
                     Skill skill = Skill.allSkills.Where(a => a.name == action.type).First();

@@ -24,7 +24,7 @@ using System.Runtime.InteropServices;
 ///         c) Betöltődnek az NPC-k ==> 'Background'-ot kapnak
 ///         d) Betöltődnek az 'EnemyGroup'-ok
 ///     4. A játékos átlép egy másik pályára ==> új térkép, új 'MobileObject'-ek
-///     5. Előhívja a PAUSE menüt ('Menu')
+///     5. Előhívja a PAUSE menüt ('Menu') 
 ///     6. Előhívja az 'Inventory'-t, az 'Equipment'-ek között böngészik
 ///         a) Vehet 'Weapon'-t, 'Armor'-t és 'Potion'-t
 ///         b) Az kiválaszott 'Equipment' 'TextBox'-os leírása oldalt megjelenik.
@@ -53,16 +53,14 @@ using System.Runtime.InteropServices;
 ///         - T ==> képességfa megnyitása, majd bezárása
 ///     3. Harc:
 ///         - TAB ==> ellefelek közti váltás
-///         - 1-6 ==> alap cselekedetek shotrcutjai
+///         - 0-6 ==> alap cselekedetek shotrcutjai
 ///         
 /// Hiányosságok:
-///     - Ellenfél ütközési sorrend
 ///     - Ellenfél képességei
 ///     - 1 körös effektek listájának eltűnése
-///     - random sebzés
 ///     - progress
 ///     - add external dialoge jumps
-///     - shield/armor?
+///     - increase effect damage
 ///     
 /// </summary>
 

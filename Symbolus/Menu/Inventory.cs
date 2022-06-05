@@ -294,25 +294,41 @@ namespace Symbolus
             {
                 if (page == 1 && weapons.Count > 0)
                 {
-                    Program.PlaySound("action_selected");
+                    if (!Program.combat || Program.cEnemy.actions.Count < 3)
+                    {
+                        Program.PlaySound("action_selected");
 
-                    equippedWeapon.equipped = false;
-                    equippedWeapon = weapons[cursorPos + firstListed];
-                    weapons[cursorPos+firstListed].equipped = !weapons[cursorPos + firstListed].equipped;
+                        equippedWeapon.equipped = false;
+                        equippedWeapon = weapons[cursorPos + firstListed];
+                        weapons[cursorPos + firstListed].equipped = !weapons[cursorPos + firstListed].equipped;
 
-                    if (Tutorial.progress == 4)
-                    {                       
-                        Tutorial.Next();
-                        Program.mapScreen.map.enemies.Add(new EnemyGroup(0, 3, "1", 2, "forest", 0));
+                        if (Tutorial.progress == 4)
+                        {
+                            Tutorial.Next();
+                            Program.mapScreen.map.enemies.Add(new EnemyGroup(0, 3, "1", 2, "forest", 0));
+                        }
+
+                        if (Program.combat)
+                            Program.cEnemy.actions.Insert(0, new BasicAction("equipment", Program.cEnemy.selectedMember));
                     }
+                    else
+                        Program.PlaySound("error");
                 }
                 else if (page == 2 && armors.Count > 0)
                 {
-                    Program.PlaySound("action_selected");
+                    if (!Program.combat || Program.cEnemy.actions.Count < 3)
+                    {
+                        Program.PlaySound("action_selected");
 
-                    equippedArmor.equipped = false;
-                    equippedArmor = armors[cursorPos + firstListed];
-                    armors[cursorPos + firstListed].equipped = !armors[cursorPos + firstListed].equipped;
+                        equippedArmor.equipped = false;
+                        equippedArmor = armors[cursorPos + firstListed];
+                        armors[cursorPos + firstListed].equipped = !armors[cursorPos + firstListed].equipped;
+
+                        if (Program.combat)
+                            Program.cEnemy.actions.Insert(0, new BasicAction("equipment", Program.cEnemy.selectedMember));
+                    }
+                    else
+                        Program.PlaySound("error");
                 }
                 else if (page == 3 && potions.Count > 0)
                 {            
@@ -345,9 +361,7 @@ namespace Symbolus
                     page = 1;
                 }
                 else
-                {
-                    Program.PlaySound("error");
-                }                
+                    Program.PlaySound("error");        
             }
         }
     }
