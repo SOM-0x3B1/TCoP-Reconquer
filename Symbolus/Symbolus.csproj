@@ -49,7 +49,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <ApplicationIcon>TCoP-logo.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>Symbolus.Program</StartupObject>
@@ -91,6 +91,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="TCoP-logo.ico" />
     <None Include="bin\Debug\assets\actions.txt" />
     <Content Include="favicon.ico" />
   </ItemGroup>

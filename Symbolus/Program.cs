@@ -61,6 +61,10 @@ using System.Runtime.InteropServices;
 ///     - progress
 ///     - add external dialoge jumps
 ///     - increase effect damage
+///     - refactor map construction
+///     - glitch scenes
+///     - misi bácsi
+///     - retreat
 ///     
 /// </summary>
 
@@ -327,7 +331,6 @@ namespace Symbolus
             }
             #endregion
 
-            #region Teszt
             //Eszköztár feltöltése (kíséleti)
             #region Feltöltés
             player.inventory.weapons.Add(new Weapon("Bot", "normal", 5, "Mindenhol ott van. Mindenre használható. Midnenki szereti.", 0));
@@ -341,7 +344,6 @@ namespace Symbolus
 
             player.inventory.potions.Add("Paprikapálinka", new Potion("Paprikapálinka", "Felfrissít.", "stamina1", 1, 50));
             player.inventory.potions.Add("Gyógyfű", new Potion("Gyógyfű", "Biztos segít...", "heal1", 1, 30));
-            #endregion
             #endregion
 
 
