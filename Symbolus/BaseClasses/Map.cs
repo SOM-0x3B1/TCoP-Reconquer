@@ -23,7 +23,8 @@ namespace Symbolus
         public static string centerSpace = "                                        ";
         public static int centerSpaceLength = centerSpace.Length;
         public static string smallCenterSpace = "                                    ";
-        public static int smallCenterSpaceLength = centerSpace.Length;        
+        public static int smallCenterSpaceLength = centerSpace.Length;
+        public enum MapObject { gate, enemy, npc, landmark};
 
 
         public Map(string name)
@@ -80,6 +81,42 @@ namespace Symbolus
 
                 //waveEngine = new WaveEngine(matrix, maxY, maxY / 2, centerSpaceLength);
             }
+        }
+
+        public bool CheckObject(int x, int y, MapObject mapObject)
+        {
+            switch (mapObject)
+            {
+                case MapObject.enemy:
+                    for (int i = 0; i < enemies.Count; i++)
+                    {
+                        if (enemies[i].x == x && enemies[i].y == y)
+                            return true;
+                    }
+                    return false;
+                case MapObject.gate:
+                    for (int i = 0; i < gates.Count; i++)
+                    {
+                        if (gates[i].x == x && gates[i].y == y)
+                            return true;
+                    }
+                    return false;
+                case MapObject.npc:
+                    for (int i = 0; i < npcs.Count; i++)
+                    {
+                        if (npcs[i].person && npcs[i].x == x && npcs[i].y == y)
+                            return true;
+                    }
+                    return false;
+                case MapObject.landmark:
+                    for (int i = 0; i < npcs.Count; i++)
+                    {
+                        if (!npcs[i].person && npcs[i].x == x && npcs[i].y == y)
+                            return true;
+                    }
+                    return false;
+            }
+            return false;
         }
 
         public static Dictionary<string, Map> maps = new Dictionary<string, Map>(); //már betöltött map-ok

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Threading;
 using System.Text;
 using System.Collections.Generic;
@@ -175,8 +174,7 @@ namespace Symbolus
                             Console.Write(c);
                     }
 
-                    #region Bűn
-                    else if (map.enemies.Any(a => a.x == i && a.y == j)) //ellenség
+                    else if (map.CheckObject(i, j, Map.MapObject.enemy)) //ellenség
                     {
                         if (Tutorial.progress > 0 || Tutorial.textBoxIndex > 1)
                         {
@@ -186,18 +184,17 @@ namespace Symbolus
                         else
                             Console.Write(c);
                     }
-                    else if (map.npcs.Any(a => a.x == i && a.y == j && a.person)) //személy npc
+                    else if (map.CheckObject(i, j, Map.MapObject.npc)) //személy npc
                     {
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.Write((char)31);
                     }
-                    else if (map.npcs.Any(a => a.x == i && a.y == j && !a.person)) //tárgy npc
+                    else if (map.CheckObject(i, j, Map.MapObject.landmark)) //tárgy npc
                     {
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.BackgroundColor = ConsoleColor.Black;
                         Console.Write((char)4);
                     }
-                    #endregion
 
                     else //nem mobilis objektum
                         Console.Write(c);
@@ -377,8 +374,7 @@ namespace Symbolus
                     else
                         Console.Write(c);
                 }
-                #region Bűn
-                else if (map.enemies.Any(a => a.x == x && a.y == y)) //ellenség
+                else if (map.CheckObject(x, y, Map.MapObject.enemy)) //ellenség
                 {
                     if (Tutorial.progress > 0 || Tutorial.textBoxIndex > 1)
                     {
@@ -388,18 +384,17 @@ namespace Symbolus
                     else
                         Console.Write(c);
                 }
-                else if (map.npcs.Any(a => a.x == x && a.y == y && a.person)) //személy npc
+                else if (map.CheckObject(x, y, Map.MapObject.npc)) //személy npc
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write((char)31);
                 }
-                else if (map.npcs.Any(a => a.x == x && a.y == y && !a.person)) //tárgy npc
+                else if (map.CheckObject(x, y, Map.MapObject.landmark)) //tárgy npc
                 {
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.BackgroundColor = ConsoleColor.Black;
                     Console.Write((char)4);
                 }
-                #endregion
                 else //nem mobilis objektum
                     Console.Write(c);
 
@@ -536,7 +531,7 @@ namespace Symbolus
         /// </summary>
         private void Controls()
         {
-            Thread.Sleep(100);
+            Thread.Sleep(75);
             //map.waveEngine.Start();
 
             ConsoleKeyInfo keyinfo;
