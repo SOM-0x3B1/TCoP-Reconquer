@@ -134,13 +134,9 @@ namespace Symbolus
         }
         private static void PlaySND(string sound)
         {
-            try
-            {
-                mciSendString("close " + sound, null, 0, IntPtr.Zero);
-                mciSendString($@"open assets\sfx\{sound}.wav type waveaudio alias " + sound, new StringBuilder(), 0, IntPtr.Zero);
-                mciSendString("play " + sound, null, 0, IntPtr.Zero);
-            }
-            catch { }
+            mciSendString("close " + sound, null, 0, IntPtr.Zero);
+            mciSendString($@"open assets\sfx\{sound}.wav type waveaudio alias " + sound, new StringBuilder(), 0, IntPtr.Zero);
+            mciSendString("play " + sound, null, 0, IntPtr.Zero);
         }
 
         #region indk2
