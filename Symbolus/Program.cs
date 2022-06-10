@@ -12,7 +12,7 @@ using System.Runtime.InteropServices;
 ///     A játékos a játék készítőjének háza előtt találja magát, célként a falu felszabadítását kapja.
 ///     A faluban küldetéseket és itemeket kap a lakosoktól.
 ///     A falun kívül ellenségekkel (suttyókkal) kell leszámolnia, illetve akadályokat kell áttörnie.
-///     A játék végén 5 (bad, neutral, default, secret, true) ending várja, amiket a döntéseivel, teljesítményével érhet el.
+///     A játék végén 4 (bad, neutral, default, true) ending várja, amiket a döntéseivel, teljesítményével érhet el.
 ///     
 /// Class-ok előfordulása (példa):
 ///     1. A 'Program' betölti az alapvető játékelemeket ==> pl. a 'Player'-t (, aki egy 'MobileObject'):
@@ -65,6 +65,8 @@ using System.Runtime.InteropServices;
 ///     - glitch scenes
 ///     - misi bácsi
 ///     - retreat
+///     - minigames
+///     - sources of corruption
 ///     
 /// </summary>
 
@@ -330,7 +332,6 @@ namespace Symbolus
                 }
             }
             #endregion
-
             //Eszköztár feltöltése (kíséleti)
             #region Feltöltés
             player.inventory.weapons.Add(new Weapon("Bot", "normal", 5, "Mindenhol ott van. Mindenre használható. Midnenki szereti.", 0));
@@ -377,19 +378,11 @@ namespace Symbolus
                 /* while (!Console.KeyAvailable)
                  {
                      Console.SetCursorPosition(0, 21);
-
                      Console.ForegroundColor = colors[p];
-
-
-
-
                      Console.WriteLine(title[21]);
-
-
                      p++;
                      if (p > 3)
                          p = 0;
-
                      Thread.Sleep(1000);
                  }*/
                 #endregion
@@ -496,13 +489,7 @@ namespace Symbolus
             if (line != "=")
                 matrix[i] = line;
             maxY = i;
-        }
-
-        public void SkipSpace(int y, ref int x)
-        {
-            if (starts[y, x] != 0)
-                Console.SetCursorPosition(x += starts[y, x], y);
-        }
+        }        
 
         public void CalcStart(string line, int i)
         {
@@ -516,6 +503,12 @@ namespace Symbolus
                 else
                     j++;
             }
+        }
+
+        public void SkipSpace(int y, ref int x)
+        {
+            if (starts[y, x] != 0)
+                Console.SetCursorPosition(x += starts[y, x], y);
         }
     }
 }
