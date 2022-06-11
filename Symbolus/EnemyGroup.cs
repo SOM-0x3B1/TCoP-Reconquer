@@ -852,7 +852,10 @@ namespace Symbolus
                 {
                     this.defeated = true;
                     if (this.type == "pityu_bacsi")
+                    {
                         Tutorial.Next();
+                        Program.mapScreen.map.npcs[0].currentDialog = 8;
+                    }
                     else if (Tutorial.progress == 6)
                         Tutorial.Next();
                     else if (Tutorial.progress == 8)

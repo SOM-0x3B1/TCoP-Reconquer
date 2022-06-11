@@ -59,7 +59,6 @@ using System.Runtime.InteropServices;
 ///     - Ellenfél képességei
 ///     - 1 körös effektek listájának eltűnése
 ///     - progress
-///     - add external dialoge jumps
 ///     - increase effect damage
 ///     - refactor map construction
 ///     - glitch scenes

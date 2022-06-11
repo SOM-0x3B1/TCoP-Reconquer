@@ -25,6 +25,6 @@ forest
 3;Alkotó: "Küldetésed a megszállók kiűzése./Ehhez képességekre és felszerelésre lesz szükséged.";4
 4;Alkotó: "Az utóbbit majd nálam megveheted.";5
 5;Alkotó: "Egy (kicsit illuminált állapotban lévő)/ellenfelet már fogva tartok, rajta kitapasztalhatod/a harcrendszert. Készen állsz a küzdelemre?"%Igen/Nem;6,7;
-6;Alkotó: "Remek, ez esetben nem tartóztatlak tovább./Űzd el innen Pityu bácsit!";8
-7;Alkotó: "Nem kell aggódni, Pityu bácsi nem/nagyon fog tudni visszaütni... Menni fog!";8
-8;Alkotó: "Majd itt tudsz fegyvert vásárolni."%Bolt/Vissza;-2,-1
+6;Alkotó: "Remek, ez esetben nem tartóztatlak tovább./Űzd el innen Pityu bácsit!"%Vissza;-1
+7;Alkotó: "Nem kell aggódni, Pityu bácsi nem/nagyon fog tudni visszaütni... Menni fog!"%Vissza;-1
+8;Alkotó: "Mit tehetek érted?"%Bolt/Vissza;-2,-1

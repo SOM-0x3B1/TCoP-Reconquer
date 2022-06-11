@@ -16,9 +16,9 @@ namespace Symbolus
     {
         private string name;
         public bool person = false;
+        public int currentDialog = 0; //jelenlegi dialógus
 
-        private Background background; //az npc-hez tartozó háttér
-        private int currentDialog = 0; //jelenlegi dialógus
+        private Background background; //az npc-hez tartozó háttér        
         private List<Dialog> dialogs = new List<Dialog>(); //dialógusok
         private int cursorPos = 0; //a "kurzor" pozíciója
 
