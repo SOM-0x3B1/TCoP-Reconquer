@@ -59,7 +59,7 @@ using System.Runtime.InteropServices;
 ///     - Ellenfél képességei
 ///     - 1 körös effektek listájának eltűnése
 ///     - progress
-///     - increase effect damage
+///     - increase player damage
 ///     - refactor map construction
 ///     - glitch scenes
 ///     - misi bácsi

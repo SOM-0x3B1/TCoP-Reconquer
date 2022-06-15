@@ -111,7 +111,9 @@ namespace Symbolus
             while (true)
             {
                 if (!wE.fromRestart)
-                    wE.i = -wE.height;  
+                    wE.i = -wE.height;
+                else
+                    wE.i += 2;
 
                 for (; wE.i < 0; wE.i++)
                 {
@@ -131,7 +133,7 @@ namespace Symbolus
                                         Console.BackgroundColor = ConsoleColor.Yellow;
                                         Console.Write('f');
                                     }
-                                    if (wE.n == wE.i - 1 || wE.n == wE.i + 2)
+                                    else if (wE.n == wE.i - 1 || wE.n == wE.i + 2)
                                     {
                                         Console.SetCursorPosition(x, y);
                                         Console.ForegroundColor = ConsoleColor.DarkGray;
