@@ -746,7 +746,7 @@ namespace Symbolus
                     }
                     else if (keyinfo.KeyChar >= '1' && keyinfo.KeyChar <= '6')
                         BasicActionMenu.AddViaShortcut(keyinfo.KeyChar);
-                    else if(keyinfo.KeyChar >= '0')
+                    else if(keyinfo.KeyChar == '0' || keyinfo.KeyChar == '6')
                         BasicActionMenu.AddViaShortcut('6');
                 }
                 else
@@ -1255,9 +1255,7 @@ namespace Symbolus
         {
             string temp = "";
             foreach (Effect effect in effects)
-            {
                 temp += " - " + Effect.typeToName[effect.type] + " $";
-            }
             effectList = new TextBox(temp, "Ellenség:");
         }
 
