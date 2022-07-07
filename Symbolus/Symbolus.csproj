@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DisableConsoleQuickEdit.cs" />
     <Compile Include="Graphics\WaveEngine.cs" />
     <Compile Include="Graphics\Graphical.cs" />
     <Compile Include="Menu\Action.cs" />

@@ -66,6 +66,7 @@ using System.Runtime.InteropServices;
 ///     - retreat
 ///     - minigames
 ///     - sources of corruption
+///     - achivements
 ///     
 /// </summary>
 
@@ -177,6 +178,7 @@ namespace Symbolus
 
             Console.OutputEncoding = Encoding.Unicode;
             Console.CursorVisible = false;
+            DisableConsoleQuickEdit.Go();
             //Console.ReadLine();
 
             #region Előkészületek
