@@ -14,21 +14,21 @@ static class AdvancedDisplay
     const int STD_INPUT_HANDLE = -10;
 
     [DllImport("kernel32.dll", SetLastError = true)]
-    static extern IntPtr GetStdHandle(int nStdHandle);
+    private static extern IntPtr GetStdHandle(int nStdHandle);
     [DllImport("kernel32.dll")]
-    static extern bool GetConsoleMode(IntPtr hConsoleHandle, out uint lpMode);
+    private static extern bool GetConsoleMode(IntPtr hConsoleHandle, out uint lpMode);
     [DllImport("kernel32.dll")]
-    static extern bool SetConsoleMode(IntPtr hConsoleHandle, uint dwMode);
+    private static extern bool SetConsoleMode(IntPtr hConsoleHandle, uint dwMode);
 
 
     [DllImport("user32.dll")]
-    public static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
+    private static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
     [DllImport("user32.dll")]
-    static extern bool SetLayeredWindowAttributes(IntPtr hWnd, uint crKey, byte bAlpha, uint dwFlags);
+    private static extern bool SetLayeredWindowAttributes(IntPtr hWnd, uint crKey, byte bAlpha, uint dwFlags);
     [DllImport("user32.dll", SetLastError = true)]
-    internal static extern int GetWindowLong(IntPtr hWnd, int nIndex);
+    private static extern int GetWindowLong(IntPtr hWnd, int nIndex);
     [DllImport("kernel32.dll", SetLastError = true)]
-    internal static extern IntPtr GetConsoleWindow();
+    private static extern IntPtr GetConsoleWindow();
 
 
     private static int GWL_EXSTYLE = -20;
@@ -82,7 +82,7 @@ static class AdvancedDisplay
     {
         for (int i = 255; i > 0; i -= steps)
         {
-            AdvancedDisplay.SetOpacity(Convert.ToByte(i));
+            SetOpacity(Convert.ToByte(i));
             Thread.Sleep(1);
         }
     }
