@@ -58,7 +58,6 @@ using System.Runtime.InteropServices;
 /// Hiányosságok:
 ///     - Ellenfél képességei
 ///     - 1 körös effektek listájának eltűnése
-///     - progress
 ///     - increase player damage
 ///     - refactor map construction
 ///     - glitch scenes
@@ -178,7 +177,9 @@ namespace Symbolus
 
             Console.OutputEncoding = Encoding.Unicode;
             Console.CursorVisible = false;
-            DisableConsoleQuickEdit.Go();
+            AdvancedDisplay.DisableConsoleQuickEdit();
+            AdvancedDisplay.SetWindowLong();
+                 
             //Console.ReadLine();
 
             #region Előkészületek
@@ -365,6 +366,11 @@ namespace Symbolus
             ConsoleKey key = Console.ReadKey(true).Key;
             /*int p = 0;
             ConsoleColor[] colors = { ConsoleColor.Red, ConsoleColor.Yellow, ConsoleColor.Blue, ConsoleColor.White };*/
+
+
+            /*AdvancedDisplay.FadeOut(5);
+            AdvancedDisplay.FadeIn(5);*/
+
             while (key != ConsoleKey.Enter && key != ConsoleKey.Spacebar)
             {
                 while (Console.KeyAvailable)
@@ -385,7 +391,7 @@ namespace Symbolus
                 #endregion
 
                 key = Console.ReadKey(true).Key;
-            }
+            }            
             PlaySound("select");
 
             Console.SetWindowSize(120, 30);
