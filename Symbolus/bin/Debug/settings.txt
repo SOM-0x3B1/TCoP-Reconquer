@@ -1,3 +1,3 @@
 language=HU
-music=false
-sound=false
+music=true
+sound=true

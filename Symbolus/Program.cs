@@ -332,6 +332,7 @@ namespace Symbolus
             #endregion
             //Eszköztár feltöltése (kíséleti)
             #region Feltöltés
+            /*
             player.inventory.weapons.Add(new Weapon("Bot", "normal", 5, "Mindenhol ott van. Mindenre használható. Midnenki szereti.", 0));
             player.inventory.weapons.Add(new Weapon("Seprű", "good", 10, "Ha macskák ellen beválik, a suttyók ellen miért ne működne?", 0));            
             player.inventory.weapons.Add(new Weapon("Csúzli", "rare", 30, "Lufikról gyakran lepattan. Suttyókról soha.", 0));
@@ -343,6 +344,7 @@ namespace Symbolus
 
             player.inventory.potions.Add("Paprikapálinka", new Potion("Paprikapálinka", "Felfrissít.", "stamina1", 1, 50));
             player.inventory.potions.Add("Gyógyfű", new Potion("Gyógyfű", "Biztos segít...", "heal1", 1, 30));
+            */
             #endregion
 
 
