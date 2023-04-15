@@ -1,8 +1,8 @@
 ##############################
 #                            #
-#             fff            #
-#            fffff           #
-#            fSSSf           #
+#             ppp            #
+#            ppppp           #
+#            pSSSp           #
 #            SSSSS           #
 #             SSS            #
 #          PPPSSSPPP         #
@@ -19,12 +19,12 @@
 ##############################
 =
 forest
-0;Alkotó: "Üdvözöllek a játékban.";1
-1;Alkotó: "Valószínűleg már tudod, hogy miről van szó,/de azért röviden összefoglalom.";2
-2;Alkotó: "Pusztaszentistvánt (a falumat) megszállták a/szomszédos településről érkező »suttyók«.";3
-3;Alkotó: "Küldetésed a megszállók kiűzése./Ehhez képességekre és felszerelésre lesz szükséged.";4
-4;Alkotó: "Az utóbbit majd nálam megveheted.";5
-5;Alkotó: "Egy (kicsit illuminált állapotban lévő)/ellenfelet már fogva tartok, rajta kitapasztalhatod/a harcrendszert. Készen állsz a küzdelemre?"%Igen/Nem;6,7;
-6;Alkotó: "Remek, ez esetben nem tartóztatlak tovább./Űzd el innen Pityu bácsit!"%Vissza;-1
-7;Alkotó: "Nem kell aggódni, Pityu bácsi nem/nagyon fog tudni visszaütni... Menni fog!"%Vissza;-1
-8;Alkotó: "Mit tehetek érted?"%Bolt/Vissza;-2,-1
+0;Soma: "Üdvözöllek a játékban.";1
+1;Soma: "Valószínűleg már tudod, hogy miről van szó,/de azért röviden összefoglalom.";2
+2;Soma: "Pusztaszentistvánt (a falumat) megszállták a/szomszédos településről érkező »suttyók«.";3
+3;Soma: "Küldetésed a megszállók kiűzése./Ehhez képességekre és felszerelésre lesz szükséged.";4
+4;Soma: "Az utóbbit majd nálam megveheted.";5
+5;Soma: "Egy (kicsit illuminált állapotban lévő)/ellenfelet már fogva tartok, rajta kitapasztalhatod/a harcrendszert. Készen állsz a küzdelemre?"%Igen/Nem;6,7;
+6;Soma: "Remek, ez esetben nem tartóztatlak tovább./Űzd el innen Pityu bácsit!";-1
+7;Soma: "Nem kell aggódni, Pityu bácsi nem/nagyon fog tudni visszaütni... Menni fog!";-1
+8;Soma: "Mit tehetek érted?"%Bolt/Vissza;-2,-1
