@@ -351,6 +351,9 @@ namespace Symbolus
             Thread.Sleep(1000); //Az előkészületek után valamiért időt kell hagyni a programnak.
 
             Console.SetWindowSize(width, 30);
+            Console.SetBufferSize(width, 30);
+            Console.CursorVisible = false;
+
 
             //Menüzene indul
             if (musicOn)
@@ -395,9 +398,7 @@ namespace Symbolus
                 key = Console.ReadKey(true).Key;
             }            
             PlaySound("select");
-
-            Console.SetWindowSize(120, 30);
-            Console.CursorVisible = false;
+            
 
             //Fő programciklus
             while (true)
