@@ -566,7 +566,8 @@ namespace Symbolus
                         if (!Program.player.InteractionCheck() && Program.player.sprint) //itt a duplalépést hajtom végre; megvizsgálom, hogy végre kell-e hajtani, illetve lefuttatom az interakció keresőt
                         {
                             Program.player.move(keyinfo);
-                            Program.player.S = Program.player.MaxS - 5;
+                            if(Program.player.S > Program.player.MaxS - 5)
+                                Program.player.S = Program.player.MaxS - 5;
                             Program.player.InteractionCheck();
                         }
 

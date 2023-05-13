@@ -365,8 +365,8 @@ namespace Symbolus
                 string line = title[i];
 
                 Console.WriteLine(line);
-                /*if (line != "")
-                    Thread.Sleep(495);*/
+                if (line != "")
+                    Thread.Sleep(495);
             }
             ConsoleKey key = Console.ReadKey(true).Key;
             /*int p = 0;
